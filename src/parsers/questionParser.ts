@@ -44,29 +44,29 @@ export function parseQuestions(rawText: string): Question[] {
     qIndex++
     const body = block.text
 
-    // 1. 从标签确定题型
-    const type = typeFromTag(block.typeTag)
-
-    // 2. 提取答案
+    // 1. 提取答案
     const answer = extractAnswer(body)
 
-    // 3. 提取选项
+    // 2. 提取选项
     const options = extractOptions(body)
 
-    // 4. 提取题干（类型标签后的内容，去掉选项和答案）
+    // 3. 提取题干（类型标签后的内容，去掉选项和答案）
     const stem = extractStem(body, block.typeTag)
 
-    // 5. 如果标签没有明确题型，从答案和选项推断
-    const finalType = type !== 'single' ? type : inferType(stem, options, answer)
+    // 4. 从标签确定题型。如果标签为空或无法识别，从答案和选项推断
+    const tagType = typeFromTag(block.typeTag)
+    const type = tagType !== 'single' || block.typeTag.trim() !== ''
+      ? tagType
+      : inferType(stem, options, answer)
 
-    // 6. 判断题特殊处理：答案可能是 "对"/"错"
-    const finalAnswer = normalizeAnswer(answer, finalType, options)
+    // 5. 判断题特殊处理：答案可能是 "对"/"错"
+    const finalAnswer = normalizeAnswer(answer, type, options)
 
     questions.push({
       id: `q${qIndex}`,
-      type: finalType,
+      type,
       stem,
-      options: finalType === 'short-answer' ? [] : options,
+      options: type === 'short-answer' ? [] : options,
       answer: finalAnswer,
       explanation: '',
       chapter: '',
