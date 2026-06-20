@@ -47,7 +47,7 @@ export function ResultPage({ results, totalScore, maxScore, questions, examTitle
           {examTitle && <p className="text-gray-400 text-sm mb-4">{examTitle}</p>}
           <p className="text-gray-500 text-sm mb-2">你的得分</p>
           <div className="text-5xl font-bold text-blue-500 mb-2">
-            {totalScore}<span className="text-xl text-gray-400 font-normal"> / {maxScore}</span>
+            {Math.round(totalScore * 100) / 100}<span className="text-xl text-gray-400 font-normal"> / {Math.round(maxScore * 100) / 100}</span>
           </div>
           <p className="text-gray-500">正确率 {pct}%</p>
           <div className="flex items-center justify-center gap-3 mt-4">
@@ -87,7 +87,7 @@ export function ResultPage({ results, totalScore, maxScore, questions, examTitle
                   <span className={`text-sm font-bold ${
                     r.isCorrect ? 'text-emerald-600' : r.isPartial ? 'text-yellow-600' : 'text-red-500'
                   }`}>
-                    {r.earnedScore}分
+                    {Math.round(r.earnedScore * 100) / 100}分
                   </span>
                 </div>
 
