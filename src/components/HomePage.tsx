@@ -18,7 +18,7 @@ const SUBJECTS: ExamSubject[] = [
   {
     key: 'avionics',
     title: '航空电子系统 Ⅰ',
-    subtitle: '自动飞行 · 导航 · 通信 · 指示与记录',
+    subtitle: '',
     count: 112,
     icon: '✈️',
     data: avionicsExam as Question[],
@@ -55,7 +55,7 @@ export function HomePage({ onStartQuiz }: Props) {
                   <span className="text-3xl">{subject.icon}</span>
                   <div className="flex-1 min-w-0">
                     <h3 className="font-bold text-gray-800 text-base">{subject.title}</h3>
-                    <p className="text-sm text-gray-400 mt-0.5">{subject.subtitle}</p>
+                    {subject.subtitle && <p className="text-sm text-gray-400 mt-0.5">{subject.subtitle}</p>}
                     <div className="flex items-center gap-3 mt-3">
                       <span className="text-xs bg-blue-50 text-blue-600 px-2 py-0.5 rounded-full font-medium">
                         {subject.count} 题
