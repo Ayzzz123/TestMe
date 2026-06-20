@@ -107,7 +107,7 @@ function extractAnswer(body: string): string {
 
 function extractOptions(body: string): string[] {
   // 先去掉 ✅ 正确答案 部分，避免干扰选项提取
-  const cleanBody = body.replace(/✅\s*正确答案\s*[:：].*$/, '').trim()
+  const cleanBody = body.replace(/✅\s*正确答案\s*[:：].*$/m, '').trim()
 
   const options: string[] = []
 
