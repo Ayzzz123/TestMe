@@ -65,4 +65,16 @@ describe('combinedSimilarity', () => {
     expect(result).toBeGreaterThan(0.5)
     expect(result).toBeLessThan(1.0)
   })
+
+  it('returns 1.0 when both inputs are empty', () => {
+    expect(combinedSimilarity('', '')).toBe(1.0)
+  })
+
+  it('returns 0 when model answer is empty but user answer is not', () => {
+    expect(combinedSimilarity('', 'something')).toBe(0)
+  })
+
+  it('returns 0 when user answer is empty but model answer is not', () => {
+    expect(combinedSimilarity('something', '')).toBe(0)
+  })
 })

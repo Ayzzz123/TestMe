@@ -69,6 +69,11 @@ function getBigrams(text: string): string[] {
 }
 
 export function combinedSimilarity(modelAnswer: string, userAnswer: string): number {
+  // 两个都为空 → 完全一致
+  if (!modelAnswer.trim() && !userAnswer.trim()) return 1.0
+  // 一个为空 → 完全不相似
+  if (!modelAnswer.trim() || !userAnswer.trim()) return 0
+
   const keywords = extractKeywords(modelAnswer)
   const coverage = keywordCoverage(keywords, userAnswer)
   const jaccard = jaccardSimilarity(modelAnswer, userAnswer)
