@@ -29,12 +29,14 @@ export function UploadPage({ onQuestionsLoaded }: Props) {
         text = await extractDocxText(file)
       } else if (ext === 'pptx') {
         text = await extractPptxText(file)
+      } else if (ext === 'txt') {
+        text = await file.text()
       } else {
-        throw new Error(`不支持的文件格式：.${ext}。请上传 PDF、DOCX 或 PPTX 文件。`)
+        throw new Error(`不支持的文件格式：.${ext}。请上传 PDF、DOCX、PPTX 或 TXT 文件。`)
       }
 
       if (!text.trim()) {
-        throw new Error('未能从文件中提取到文字内容。文件可能是扫描版或图片。')
+        throw new Error('未能从文件中提取到文字内容。文件可能是扫描版或图片，请尝试导出为 TXT 后重新上传。')
       }
 
       const questions = parseQuestions(text)
@@ -101,12 +103,12 @@ export function UploadPage({ onQuestionsLoaded }: Props) {
             <p className="text-gray-700 font-medium mb-2">
               拖拽题库文件到这里
             </p>
-            <p className="text-sm text-gray-400 mb-4">支持 PDF · DOCX · PPTX</p>
+            <p className="text-sm text-gray-400 mb-4">支持 PDF · DOCX · PPTX · TXT</p>
             <label className="inline-block px-6 py-2 bg-blue-500 text-white rounded-lg cursor-pointer hover:bg-blue-600 transition-colors">
               选择文件
               <input
                 type="file"
-                accept=".pdf,.docx,.pptx"
+                accept=".pdf,.docx,.pptx,.txt"
                 onChange={handleFileInput}
                 className="hidden"
               />
