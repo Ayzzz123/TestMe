@@ -1,5 +1,5 @@
 import type { Question, GradingResult } from '../types'
-import { extractKeywords, keywordCoverage, combinedSimilarity } from './similarity'
+import { extractKeywords, keywordCoverage } from './similarity'
 
 export function gradeQuestion(question: Question, userAnswer: string): GradingResult {
   const trimmed = userAnswer.trim()
