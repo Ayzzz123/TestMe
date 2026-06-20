@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react'
 import type { Question, GradingResult, AppPage } from './types'
-import { UploadPage } from './components/UploadPage'
+import { HomePage } from './components/HomePage'
 import { QuizPage } from './components/QuizPage'
 import { ResultPage } from './components/ResultPage'
 
@@ -10,9 +10,11 @@ export default function App() {
   const [results, setResults] = useState<GradingResult[]>([])
   const [totalScore, setTotalScore] = useState(0)
   const [maxScore, setMaxScore] = useState(0)
+  const [examTitle, setExamTitle] = useState('')
 
-  const handleQuestionsLoaded = useCallback((q: Question[]) => {
+  const handleStartQuiz = useCallback((q: Question[], title: string) => {
     setQuestions(q)
+    setExamTitle(title)
     setPage('quiz')
   }, [])
 
@@ -27,8 +29,12 @@ export default function App() {
     setPage('quiz')
   }, [])
 
+  const handleGoHome = useCallback(() => {
+    setPage('upload')
+  }, [])
+
   if (page === 'upload') {
-    return <UploadPage onQuestionsLoaded={handleQuestionsLoaded} />
+    return <HomePage onStartQuiz={handleStartQuiz} />
   }
 
   if (page === 'quiz') {
@@ -41,7 +47,9 @@ export default function App() {
       totalScore={totalScore}
       maxScore={maxScore}
       questions={questions}
+      examTitle={examTitle}
       onRestart={handleRestart}
+      onGoHome={handleGoHome}
     />
   )
 }

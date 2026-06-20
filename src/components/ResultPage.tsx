@@ -7,10 +7,12 @@ interface Props {
   totalScore: number
   maxScore: number
   questions: Question[]
+  examTitle: string
   onRestart: () => void
+  onGoHome: () => void
 }
 
-export function ResultPage({ results, totalScore, maxScore, questions, onRestart }: Props) {
+export function ResultPage({ results, totalScore, maxScore, questions, examTitle, onRestart, onGoHome }: Props) {
   const [expandedId, setExpandedId] = useState<string | null>(null)
   const [saved, setSaved] = useState(false)
 
@@ -42,6 +44,7 @@ export function ResultPage({ results, totalScore, maxScore, questions, onRestart
       <div className="max-w-2xl mx-auto">
         {/* 总分卡片 */}
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8 text-center mb-6">
+          {examTitle && <p className="text-gray-400 text-sm mb-4">{examTitle}</p>}
           <p className="text-gray-500 text-sm mb-2">你的得分</p>
           <div className="text-5xl font-bold text-blue-500 mb-2">
             {totalScore}<span className="text-xl text-gray-400 font-normal"> / {maxScore}</span>
@@ -111,10 +114,10 @@ export function ResultPage({ results, totalScore, maxScore, questions, onRestart
             重新作答
           </button>
           <button
-            onClick={() => window.print()}
+            onClick={onGoHome}
             className="flex-1 py-3 border border-gray-300 text-gray-700 rounded-xl font-medium hover:bg-gray-50 transition-colors"
           >
-            导出/打印
+            返回首页
           </button>
         </div>
       </div>
