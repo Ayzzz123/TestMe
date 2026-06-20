@@ -1,0 +1,875 @@
+
+
+   
+
+       7  112 
+
+      
+ 1: -   
+
+: 17  : 91.2 
+
+
+ 1. [] (A/T)?
+
+    A.  N1 
+    B. 
+    C. 
+    D. 
+     : A
+
+ 2. [] ?
+    A.  / 
+    B. 
+    C. 
+    D. 
+     : A
+
+ 3. [] (A/T)?
+    A. (IDLE)
+    B. 
+    C. 
+    D.  N1 
+     : A
+
+ 4. [] (ADIRU)?
+    A. (TAS)
+    B. (EGT)
+    C. 
+    D. 
+     : B
+
+ 5. [] (FD)?
+    A. 
+    B. 
+    C. (FMS)
+    D. 
+     : C
+
+                                                              
+6. [] (FD)?
+  A. 
+  B. 
+  C. 
+  D. 
+    : A
+
+7. []  A320 ?
+  A. FCC
+  B. FMGC
+  C. ELAC
+  D. FAC 
+    : D
+
+8. []  / (TO/GA)?
+  A. 
+  B. 
+  C. 
+  D. 
+    : B
+
+9. []  CWS ?
+  A. 
+  B. 
+  C.  / 
+  D. 
+    : C
+
+10. [] ?
+  A.  / 
+  B. 
+  C. 
+  D. 
+    : A
+
+11. []  CMD ?
+  A. 
+  B. 
+  C. 
+
+                                                             
+D. 
+ : C
+
+
+
+12. [] (          )
+
+A. 
+B. 
+C. 
+D. 
+ : CD
+
+13. [] (AFS)?
+
+  A.  A/T
+  B.  AP
+  C.  FD
+  D.  YD 
+    : ABCD
+
+14. [] ?
+
+  A. 
+  B. 
+  C. 
+  D. 
+    : CD
+
+15. [] A320 (  )
+
+A. 
+B. 
+C. 
+D. 
+ : ACD
+
+
+ 16. [] 
+
+    A. 
+    B. 
+     : 
+
+         
+17. [] 
+  A. 
+  B. 
+    : 
+
+                                                             
+ 2: -
+
+: 11  : 91.1 
+
+
+ 1. [] A320  RA ?
+
+    A. 
+    B. 
+    C. 
+    D. THS 
+     : A
+
+ 2. [] ?
+    A.  50 
+    B. 
+    C. 
+    D.  500 
+     : D
+
+ 3. [] 
+    A. EGPWS PWS TCAS RA
+    B. EGPWS TCAS RAPWS 
+    C. PWS EGPWS TCAS RA
+    D. TCAS RAEGPWS PWS 
+     : C
+
+ 4. [] ND 
+    A. ROSE/ILS
+    B. ARC
+    C. ROSE/NAV
+    D. PLAN
+     : D
+
+ 5. [] 
+    A. PFD 
+    B. A+B+C
+    C. ECAM/SD 
+    D. ND 
+     : A
+
+                                                              
+ 6. [] ( )
+    A. 0-2500ft
+    B. 0-25000ft
+    C. 0-250ft
+    D. 0-2500m
+     : A
+
+
+ 7. [] EGPWS  ( )
+
+    A. 
+    B. 
+     : 
+
+ 8. [] 
+    A. 
+    B. 
+     : 
+
+ 9. [] EGPWS  ( )
+    A. 
+    B. 
+     : 
+
+
+ 10. [] 
+
+    A. 
+    B. 
+    C. 
+    D. 
+     : ABCD
+
+ 11. [] FMC 
+    A. 
+    B. 
+    C. 
+    D. 
+     : ABC
+
+                                                              
+ 3: -
+
+: 16  : 93.8 
+
+
+ 1. []  A320  1 
+
+    A. ILS 2
+    B. MMR 1
+    C. MMR 2
+    D. ILS 1
+     : B
+
+ 2. [] ILS 
+    A. 
+    B. 
+    C. 
+    D. /
+     : D
+
+ 3. [] ILS 
+    A.  3°
+    B.  3°
+    C.  3°
+    D. 
+     : A
+
+ 4. [] ILS2 
+    A. PFD1  ND2
+    B. PFD2  ND1
+    C. PFD2  ND2
+    D. PFD1  ND1
+     : B
+
+ 5. [] VOR 
+    A. 
+    B. 
+    C. 
+    D. 
+     : A
+
+                                                              
+ 6. []  TCAS
+    A. 
+    B. 
+    C. 
+    D. 
+     : A
+
+ 7. [] ILS 
+    A. 90HZ  150HZ 
+    B. 90HZ  90HZ 
+    C. 90HZ  150HZ 
+    D. 150HZ  90HZ 
+     : A
+
+ 8. [] TCASRA
+    A. 
+    B. 
+    C. 
+    D. 
+     : A
+
+ 9. [] TCAS 
+    A. 
+    B.  RA 
+    C. 
+    D.  RA 
+     : A
+
+ 10. [] TCAS ()
+    A. 
+    B. 
+    C.  ATC 
+    D. 
+     : C
+
+
+ 11. [] TCAS  RA :()
+
+    A. "Descend""climb"
+    B. "Traffic"
+
+                                                              
+    C. PFD 
+    D. ND 
+     : ACD
+
+ 12. [] 
+    A. 
+    B. ND
+    C. PFD
+    D. 
+     : ABC
+
+ 13. [] ADF  VOR 
+    A.  ND
+    B.  ADI
+    C.  PFD
+    D.  RMI
+     : AD
+
+ 14. [] ?()
+    A. 
+    B. GPS 
+    C. 
+    D. 
+     : ACD
+
+
+ 15. [] 
+
+    A. 
+    B. 
+     : 
+
+ 16. [] ATC  0000-7777
+    A. 
+    B. 
+     : 
+
+                                                              
+ 4: -ADIRS 
+
+: 14  : 92.8 
+
+
+ 1. [] ():
+
+    A. ADIRU
+    B. ADF
+    C. VOR
+    D. ILS
+     : A
+
+ 2. []  ADIRS ADR ( )
+    A. 
+    B. 
+    C. 
+    D. 
+     : A
+
+ 3. [] GPS 
+    A. MCDU  GPS 
+    B. PFD
+    C. ECAM 
+    D. ND
+     : A
+
+ 4. [] .
+    A. 
+    B. 
+    C. 
+    D. 
+     : A
+
+ 5. []  ADM
+    A. 
+    B. 
+    C. 
+    D. 
+     : B
+
+                                                              
+ 6. [] 
+    A.  AC ESS BUS
+    B.  DC BUS
+    C.  AC BUS
+    D. 
+     : D
+
+ 7. [] ADIRU ?
+    A. ADR  IR
+    B. ADR  MMR
+    C. IR  MMR
+    D. ADM  IRS
+     : A
+
+
+ 8. []  ADR 
+  ( )
+
+    A. 
+    B. 
+     : 
+
+ 9. []  ADIRUON BAT  3   ADIRU  ( )
+    A. 
+    B. 
+     : 
+
+ 10. [] IR  ( )
+    A. 
+    B. 
+     : 
+
+ 11. []  ISIS  MCDU-CFDS  ( )
+    A. 
+    B. 
+     : 
+
+ 12. [] ADIRU1  2 ADIRU3  ( )
+    A. 
+
+                                                              
+    B. 
+     : 
+
+
+ 13. []  IR 
+
+    A. 
+    B.  ADM
+    C. 
+    D. 
+     : CD
+ 14. [] ADF  VOR 
+    A.  ND
+    B.  ADI
+    C.  PFD
+    D.  RMI
+     : AD
+
+                                                              
+ 5: -
+
+: 17  : 82.4 
+
+
+ 1. [] AMU ( )
+
+    A. 
+    B. 
+    C. 
+    D. 
+     : C
+
+2. []  
+
+  A. FDR
+  B. CVR
+  C. ELT
+  D. ULD
+    : B
+
+3. []         
+
+  A. 
+  B. 
+  C. 
+  D. 
+    : C
+
+4. []         
+
+A. HF /VHF
+B. ACARS
+C. HF
+D. GPS
+ : B
+
+5. []       
+
+A. 
+B. 
+C. 
+D. 
+ : A
+
+             
+6. []  406MHz 
+  A. FDR
+  B. CVR
+  C.  ELT
+  D.  ELT
+    : C
+
+7. [] ( )
+  A. 
+  B. 
+  C. 
+  D. 
+    : D
+
+8. [] 
+  A. 
+  B. 
+  C. 
+  D. 
+    : A
+
+9. [] ?( )
+  A. 
+  B. 
+  C. 
+  D. 
+    : C
+
+10. []  ELT 
+  A. 
+  B. 
+  C. 
+  D. 
+    : D
+
+11. [] 
+
+
+  A. 
+  B. 
+
+                                                             
+    C. 
+    D. 
+     : D
+
+
+ 12. [] 
+
+    A. 
+    B. 
+     : 
+
+ 13. []  ELT  ELT 
+    A. 
+    B. 
+     : 
+
+ 14. [] 
+ 
+
+    A. 
+    B. 
+     : 
+
+ 15. [] CVR  FDR  ULB
+    A. 
+    B. 
+     : 
+
+
+ 16. [] 
+
+    A. 
+    B. 
+    C. 
+    D. 
+E. 
+     : ABCE
+
+ 17. []  CVR 
+    A. 
+    B. 
+
+                                                              
+C. 
+D.  CVR ERASE  2 
+ : ABCD
+
+                                                          
+ 6: -
+
+: 17  : 77.6 
+
+
+ 1. [] "INT/MIC"
+
+    A. INT 
+    B. MIC 
+    C. 
+    D. 
+     : C
+
+2. []  .
+
+  A. 
+  B. 
+  C. 
+  D. ACARS
+    : A
+
+3. []       
+
+A. HF
+B. HF /VHF
+C. ACARS
+D. GPS
+ : B
+
+4. []  
+
+
+  A. 
+  B. 
+  C. 
+  D. 
+    : A
+
+5. []  VHF  
+ VHF 
+
+  A. 
+  B. 
+  C. 
+  D. 
+    : D
+
+                                                             
+6. [] VHF   
+
+  A. PTP
+  B. PT
+  C. PPT
+  D. PTT
+    : D
+
+7. []  
+
+  A. 
+  B. 
+  C. 
+  D. ACARS
+    : C
+
+8. []  HF   HF 
+
+
+  A. ACP
+  B. RCP
+  C. RMP
+  D. REU
+    : C
+
+9. [] VHF   
+
+  A. PPT=0
+  B. PPT=1
+  C. PTT=0
+  D. PTT=1
+    : D
+
+10. []      
+
+  A. 
+  B. 
+  C. 
+  D. 
+    : D
+
+ 
+
+ 11. [] 
+
+    A. /
+    B. 
+    C. 
+    D. 
+     : BC
+
+ 12. [] A320  RMP 
+    A.  VHF 
+    B.  HF 
+    C.  HF 
+    D. 
+     : ABCD
+
+ 13. [] 
+    A. 
+    B. 
+    C. PTT 
+    D. 
+     : ABCD
+
+ 14. [] 
+    A. 
+    B. 
+    C. 
+    D. 
+     : ABC
+
+
+ 15. [] 
+  PTT 
+
+    A. 
+    B. 
+     : 
+
+ 16. [] 
+  A  Alpha 9  Niner
+
+    A. 
+
+                                                              
+  B. 
+    : 
+17. [] 
+  A. 
+  B. 
+    : 
+
+                                                             
+ 7: 
+
+: 20  : 80 
+
+
+ 1. [] ( )
+
+    A. 
+    B. 
+    C.  ECP 
+    D.  ECAM  ADV  ECAM 
+
+      
+     : D
+
+ 2. []  A320  ND 
+    A. ROSE/ILS
+    B. ROSE/NAV
+    C. ARC
+    D. PLAN
+     : D
+
+ 3. [] DFDR ()
+    A. 
+    B. 
+    C. 
+    D. 
+     : A
+
+ 4. [] ()
+    A. 12
+    B. 8
+    C. 10
+    D. 6
+     : C
+
+ 5. []  ND  DMC  ?
+    A. DMC3
+    B. DMC2
+    C. DMC1
+     : B
+
+                                                              
+6. [] EIS ( )
+  A. PFD  ND
+  B. EFIS  EACM
+  C. FWC  DMC
+  D. SDAC  FWC
+    : B
+
+7. [] 
+  A. SDAC
+  B. LGCIU
+  C. FWC
+  D. CFDIU
+    : C
+
+8. [] CFDS 
+  A. PFR
+  B. CURRENT LEG REPORT  CURRENT LEG ECAM REPORT
+  C. LAST LEG ECAM REPORT  LAST LEG REPORT
+  D. AVIONICS STATUS
+    : B
+
+9. [] ?
+  A. FWC
+  B. SDAC
+  C. ECP
+  D. DMC
+    : A
+
+10. []  ND  ND 
+  A.  PFD
+  B.  PFD/ND  PFD 
+  C.  ECAM/ND  ECAM/SD 
+  D.  DMC  PFD 
+    : B
+
+11. [] A320CEO  A320NEO 
+  A. 
+  B. 
+  C. 
+
+                                                             
+    D. 
+     : C
+
+ 12. []  ECAM ( )
+    A. FACFWCFMGC
+    B. CFDIUSDACDMC
+    C. SDACFWCDMC
+    D. SDACFMGCFCU
+     : C
+
+ 13. [] :
+    A. FDIU
+    B. CVR
+    C. 
+    D. DFDR
+     : B
+
+ 14. []  ECAM  ECAM 
+  ECP 
+
+    A.  CLEAR 
+    B.  RECALL 
+    C.  ECAM 
+    D. 
+     : D
+
+ 15. [] ?
+    A. PFD
+    B. ND
+    C. SD.
+    D. E/WD
+     : D
+
+
+ 16. [] A320  ( )
+
+    A. 
+    B. 
+     : 
+
+                                                              
+17. []  ECAM  SD  ( )
+  A. 
+  B. 
+    : 
+
+18. []  ( )
+  A. 
+  B. 
+    : 
+
+19. [] CFDS  MCDU  ( )
+  A. 
+  B. 
+    : 
+
+20. [] 
+ ( )
+
+  A. 
+  B. 
+    : 
+
+                                                             
+
