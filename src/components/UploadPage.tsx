@@ -1,4 +1,4 @@
-import { useState, useCallback, type DragEvent } from 'react'
+import { useState, useCallback, useRef, type DragEvent } from 'react'
 import type { Question } from '../types'
 import { extractPdfText } from '../parsers/pdfExtractor'
 import { extractDocxText } from '../parsers/docxExtractor'
@@ -14,6 +14,8 @@ export function UploadPage({ onQuestionsLoaded }: Props) {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [stats, setStats] = useState<string | null>(null)
+
+  const fileInputRef = useRef<HTMLInputElement>(null)
 
   const processFile = useCallback(async (file: File) => {
     setError(null)
@@ -90,6 +92,7 @@ export function UploadPage({ onQuestionsLoaded }: Props) {
         onDragOver={e => { e.preventDefault(); setIsDragging(true) }}
         onDragLeave={() => setIsDragging(false)}
         onDrop={handleDrop}
+        onClick={() => fileInputRef.current?.click()}
       >
         {loading ? (
           <div>
@@ -104,13 +107,14 @@ export function UploadPage({ onQuestionsLoaded }: Props) {
               拖拽题库文件到这里
             </p>
             <p className="text-sm text-gray-400 mb-4">支持 PDF · DOCX · PPTX · TXT</p>
-            <label className="inline-block px-6 py-2 bg-blue-500 text-white rounded-lg cursor-pointer hover:bg-blue-600 transition-colors">
+            <label className="relative inline-block px-6 py-2 bg-blue-500 text-white rounded-lg cursor-pointer hover:bg-blue-600 transition-colors overflow-hidden">
               选择文件
               <input
+                ref={fileInputRef}
                 type="file"
                 accept=".pdf,.docx,.pptx,.txt"
                 onChange={handleFileInput}
-                className="hidden"
+                className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
               />
             </label>
           </>

@@ -138,7 +138,7 @@ function extractOptions(body: string): string[] {
   return options
 }
 
-function extractStem(body: string, typeTag: string): string {
+function extractStem(body: string, _typeTag: string): string {
   // 找到第一个 A. 选项的位置
   const optionStart = body.search(/[A-E]\.\s*/)
   // 找到 ✅ 答案的位置
@@ -159,7 +159,7 @@ function extractStem(body: string, typeTag: string): string {
   return stem
 }
 
-function normalizeAnswer(answer: string, type: QuestionType, options: string[]): string {
+function normalizeAnswer(answer: string, type: QuestionType, _options: string[]): string {
   // 判断题：如果答案是 "对" 或 "错"，映射到 A/B
   if (type === 'true-false') {
     if (answer === '对') return 'A'
