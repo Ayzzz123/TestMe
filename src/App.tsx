@@ -13,7 +13,15 @@ export default function App() {
   const [examTitle, setExamTitle] = useState('')
 
   const handleStartQuiz = useCallback((q: Question[], title: string) => {
-    setQuestions(q)
+    // 每题分值 = 100 / 题数，保留两位小数；最后一题补齐差额确保满分精确 100
+    const raw = 100 / q.length
+    const perQuestion = Math.floor(raw * 100) / 100
+    const remainder = Math.round((100 - perQuestion * (q.length - 1)) * 100) / 100
+    const normalized = q.map((item, i) => ({
+      ...item,
+      score: i === q.length - 1 ? remainder : perQuestion,
+    }))
+    setQuestions(normalized)
     setExamTitle(title)
     setPage('quiz')
   }, [])
