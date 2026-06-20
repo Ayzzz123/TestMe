@@ -106,56 +106,33 @@ function extractAnswer(body: string): string {
 }
 
 function extractOptions(body: string): string[] {
+  // 先去掉 ✅ 正确答案 部分，避免干扰选项提取
+  const cleanBody = body.replace(/✅\s*正确答案\s*[:：].*$/, '').trim()
+
   const options: string[] = []
-  // 匹配 A. xxx 到下一个选项或行末的模式
-  // 支持内联：A. N1转速 B. 飞机航向 C. ...
-  // 和多行：每行一个选项
-  const inlineRegex = /([A-D])\.\s*([^A-D✅\n\r]*?)(?=\s*[A-D]\.\s*|\s*✅|\s*$|$)/g
+
+  // 策略：找到所有 [A-E]. 的位置，按位置排序，然后提取每段之间的文本
+  const markerRegex = /([A-E])\.\s*/g
+  const markers: { letter: string; index: number }[] = []
   let m: RegExpExecArray | null
-
-  // 首先尝试匹配分离的行格式
-  const lineRegex = /^\s*([A-D])\.\s*(.*?)\s*$/gm
-  const lineMatches: { letter: string; text: string }[] = []
-  while ((m = lineRegex.exec(body)) !== null) {
-    lineMatches.push({ letter: m[1], text: m[2].trim() })
+  while ((m = markerRegex.exec(cleanBody)) !== null) {
+    markers.push({ letter: m[1], index: m.index })
   }
 
-  if (lineMatches.length >= 2) {
-    // 行格式：每行一个选项
-    // 按字母顺序排列
-    const seen = new Set<string>()
-    for (const lm of lineMatches) {
-      // 避免重复（内联格式也会匹配行格式）
-      const key = lm.letter + ':' + lm.text
-      if (!seen.has(key)) {
-        seen.add(key)
-        options.push(lm.text)
-      }
-    }
+  // 如果没有找到标记，回退到行格式
+  if (markers.length === 0) {
+    return options
   }
 
-  // 如果行格式没有提取到足够选项，尝试内联格式
-  if (options.length < 2) {
-    // 找到第一个 A. 的位置，提取到 ✅ 或末尾
-    const startMatch = /A\.\s*/.exec(body)
-    if (startMatch) {
-      const relevant = body.slice(startMatch.index)
-      const endMatch = /✅/.exec(relevant)
-      const optionText = endMatch ? relevant.slice(0, endMatch.index) : relevant
+  // 按索引排序
+  markers.sort((a, b) => a.index - b.index)
 
-      // 按 A. B. C. D. 分割
-      const parts = optionText.split(/\s*([A-D])\.\s*/)
-      // parts[0] 为空，parts[1]='A', parts[2]='内容', parts[3]='B', ...
-      let currentLetter = ''
-      for (let i = 1; i < parts.length; i++) {
-        if (/^[A-D]$/.test(parts[i])) {
-          currentLetter = parts[i]
-        } else if (currentLetter && parts[i].trim()) {
-          options.push(parts[i].trim())
-          currentLetter = ''
-        }
-      }
-    }
+  // 提取每个选项的文本：从当前 marker 后到下一个 marker 前（或文本末尾）
+  for (let i = 0; i < markers.length; i++) {
+    const start = markers[i].index + 2  // 跳过 "A." (2 chars)
+    const end = i < markers.length - 1 ? markers[i + 1].index : cleanBody.length
+    const text = cleanBody.slice(start, end).trim()
+    options.push(text)
   }
 
   return options
@@ -163,7 +140,7 @@ function extractOptions(body: string): string[] {
 
 function extractStem(body: string, typeTag: string): string {
   // 找到第一个 A. 选项的位置
-  const optionStart = body.search(/[A-D]\.\s*/)
+  const optionStart = body.search(/[A-E]\.\s*/)
   // 找到 ✅ 答案的位置
   const answerStart = body.search(/✅/)
 
@@ -194,8 +171,8 @@ function normalizeAnswer(answer: string, type: QuestionType, options: string[]):
 function inferType(stem: string, options: string[], answer: string): QuestionType {
   const hasBlank = /\([\s　]*\)|（[\s　]*）/.test(stem)
 
-  const isSingleLetter = /^[A-Da-d]$/.test(answer.trim())
-  const isMultiLetter = /^[A-Da-d]{2,4}$/.test(answer.trim())
+  const isSingleLetter = /^[A-Ea-e]$/.test(answer.trim())
+  const isMultiLetter = /^[A-Ea-e]{2,5}$/.test(answer.trim())
 
   if (options.length === 2 && isSingleLetter) {
     return 'true-false'
