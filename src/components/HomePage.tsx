@@ -75,9 +75,6 @@ export function HomePage({ onStartQuiz }: Props) {
                       <span className="text-xs bg-emerald-50 text-emerald-600 px-2.5 py-1 rounded-full font-semibold">
                         模拟考试
                       </span>
-                      <span className="text-xs text-gray-400 ml-auto">
-                        {Math.round(100 / subject.count * 100) / 100} 分/题
-                      </span>
                     </div>
                   </div>
                   <div className="w-8 h-8 rounded-full bg-gray-50 group-hover:bg-blue-50 flex items-center justify-center text-gray-300 group-hover:text-blue-400 transition-all duration-300 mt-2">

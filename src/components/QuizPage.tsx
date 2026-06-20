@@ -94,7 +94,6 @@ export function QuizPage({ questions, onFinish }: Props) {
               <div className="flex-1 h-1 bg-gray-100 rounded-full overflow-hidden">
                 <div className="h-full bg-emerald-400 rounded-full transition-all duration-500" style={{ width: `${pct}%` }} />
               </div>
-              <span className="text-xs font-medium text-gray-500">{pct}%</span>
             </div>
             <div className="flex-1 overflow-y-auto scrollbar-thin">
               <div className="flex flex-wrap gap-1.5">
@@ -140,7 +139,6 @@ export function QuizPage({ questions, onFinish }: Props) {
                   style={{ height: `${pct}%` }}
                 />
               </div>
-              <span className="text-[10px] font-bold text-gray-500">{pct}%</span>
               <span className="text-[10px] text-gray-400">{answeredCount}</span>
             </div>
           </div>
