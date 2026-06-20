@@ -3,33 +3,71 @@ import type { Question, QuestionType } from '../types'
 export function parseQuestions(rawText: string): Question[] {
   const questions: Question[] = []
 
-  // 按题号边界分割：匹配 "数字. [" 开头的行
-  const questionRegex = /(?:^|\n)\s*(\d+)\.\s*\[([^\]]*)\]\s*([\s\S]*?)(?=\n\s*\d+\.\s*\[|$)/g
+  // 清理文本：移除分页符和多余空白
+  const cleaned = rawText
+    .replace(/\f/g, '\n')
+    // 移除重复的文档标题行
+    .replace(/航空电子系统Ⅰ\s*作业题目与答案汇总/g, '')
+    // 移除作业头部行
+    .replace(/^作业\s*\d+.*$/gm, '')
+    // 移除题量行
+    .replace(/^题量.*$/gm, '')
+    // 移除题型分类标签行（独立的 "单选题", "多选题", "判断题" 行）
+    .replace(/^(单选题|多选题|判断题)\s*$/gm, '')
+    // 移除题目行前面的题型标签前缀（如 "单选题 1." → "1."）
+    .replace(/^(单选题|多选题|判断题|填空题|简答题)\s+(?=\d+\.\s*\[)/gm, '')
+    // 修复合并行：在 "✅ 正确答案: X N. [" 之间插入换行
+    .replace(/(✅\s*正确答案\s*[:：]\s*\S+)\s+(\d+\.\s*\[)/g, '$1\n$2')
+    // 修复合并行：在 "答案: X N. [" 之间插入换行
+    .replace(/(答案\s*[:：]\s*\S+)\s+(\d+\.\s*\[)/g, '$1\n$2')
+
+  // 按题号分割：匹配 N. [xxx] 格式（方括号内容可为空）
+  const questionRegex = /(?:^|\n)\s*(\d+)\.\s*\[([^\]]*)\]\s*/gm
+  const blocks: { index: number; number: string; typeTag: string; text: string }[] = []
   let match: RegExpExecArray | null
+  let lastIndex = 0
+
+  while ((match = questionRegex.exec(cleaned)) !== null) {
+    if (blocks.length > 0) {
+      blocks[blocks.length - 1].text = cleaned.slice(lastIndex, match.index)
+    }
+    blocks.push({ index: match.index, number: match[1], typeTag: match[2].trim(), text: '' })
+    lastIndex = match.index + match[0].length
+  }
+  // 最后一块
+  if (blocks.length > 0) {
+    blocks[blocks.length - 1].text = cleaned.slice(lastIndex)
+  }
 
   let qIndex = 0
-  while ((match = questionRegex.exec(rawText)) !== null) {
+  for (const block of blocks) {
     qIndex++
-    const body = match[3] || ''
+    const body = block.text
 
-    // 提取题干
-    const stem = extractStem(match[0])
+    // 1. 从标签确定题型
+    const type = typeFromTag(block.typeTag)
 
-    // 提取选项
-    const options = extractOptions(body)
-
-    // 提取答案
+    // 2. 提取答案
     const answer = extractAnswer(body)
 
-    // 推断题型
-    const type = inferType(stem, options, answer)
+    // 3. 提取选项
+    const options = extractOptions(body)
+
+    // 4. 提取题干（类型标签后的内容，去掉选项和答案）
+    const stem = extractStem(body, block.typeTag)
+
+    // 5. 如果标签没有明确题型，从答案和选项推断
+    const finalType = type !== 'single' ? type : inferType(stem, options, answer)
+
+    // 6. 判断题特殊处理：答案可能是 "对"/"错"
+    const finalAnswer = normalizeAnswer(answer, finalType, options)
 
     questions.push({
       id: `q${qIndex}`,
-      type,
+      type: finalType,
       stem,
-      options: type === 'short-answer' ? [] : options,
-      answer,
+      options: finalType === 'short-answer' ? [] : options,
+      answer: finalAnswer,
       explanation: '',
       chapter: '',
       score: 5,
@@ -39,60 +77,118 @@ export function parseQuestions(rawText: string): Question[] {
   return questions
 }
 
-function extractStem(block: string): string {
-  const lines = block.split('\n')
-  const stemLines: string[] = []
-
-  for (const line of lines) {
-    const trimmed = line.trim()
-    // 跳过题号行
-    if (/^\d+\.\s*\[/.test(trimmed)) {
-      const stemPart = trimmed.replace(/^\d+\.\s*\[[^\]]*\]\s*/, '').trim()
-      if (stemPart) stemLines.push(stemPart)
-      continue
-    }
-    // 跳过选项行
-    if (/^[A-D]\.\s/.test(trimmed)) continue
-    // 跳过答案行（含"答案"前缀的）
-    if (/^答案[:：]/.test(trimmed)) continue
-    // 跳过答案行（只有冒号的格式 : A, : CD, : 等）
-    if (/^\s*:\s*[A-D]*\s*$/.test(line)) continue
-    // 跳过章节头行（如 "1: -"）
-    if (/^\d+:\s*-/.test(trimmed)) continue
-    // 跳过统计行
-    if (/^:\s*\d+/.test(trimmed) || /^题目数量/.test(trimmed)) continue
-    // 跳过章节行
-    if (/^第\d+章/.test(trimmed)) continue
-
-    if (trimmed) stemLines.push(trimmed)
-  }
-
-  return stemLines.join(' ').trim()
-}
-
-function extractOptions(body: string): string[] {
-  const options: string[] = []
-  const optionRegex = /^\s*([A-D])\.\s*(.*)/gm
-  let m: RegExpExecArray | null
-  while ((m = optionRegex.exec(body)) !== null) {
-    options.push(m[2].trim())
-  }
-  return options
+function typeFromTag(tag: string): QuestionType {
+  if (tag.includes('单选')) return 'single'
+  if (tag.includes('多选')) return 'multiple'
+  if (tag.includes('判断')) return 'true-false'
+  if (tag.includes('填空')) return 'fill-blank'
+  if (tag.includes('简答')) return 'short-answer'
+  return 'single' // 默认，后续由 inferType 推断
 }
 
 function extractAnswer(body: string): string {
-  // 优先匹配 "答案: X" 格式
-  const answerRegex = /答案[:：]\s*(.+)/i
-  const m = answerRegex.exec(body)
-  if (m) return m[1].trim()
+  // 优先匹配 "✅ 正确答案: X" 格式
+  const checkmarkRegex = /✅\s*正确答案\s*[:：]\s*(.+?)(?:\s*$|$)/m
+  const cm = checkmarkRegex.exec(body)
+  if (cm) return cm[1].trim()
 
-  // 回退匹配纯 ": X" 格式（中文"答案"可能在 PDF 提取中丢失）
-  // 匹配行末的 ": A", ": CD", ": ABCD" 或 ": " 空答案
-  const fallbackRegex = /^[ \t]*:\s*([A-Da-d]*)\s*$/m
+  // 然后匹配 "答案: X" 格式
+  const answerRegex = /答案\s*[:：]\s*(.+?)(?:\s*$|$)/m
+  const am = answerRegex.exec(body)
+  if (am) return am[1].trim()
+
+  // 回退：纯 ": X" 格式
+  const fallbackRegex = /^[ \t]*:\s*([^\n\r]+?)\s*$/m
   const fm = fallbackRegex.exec(body)
   if (fm) return fm[1].trim()
 
   return ''
+}
+
+function extractOptions(body: string): string[] {
+  const options: string[] = []
+  // 匹配 A. xxx 到下一个选项或行末的模式
+  // 支持内联：A. N1转速 B. 飞机航向 C. ...
+  // 和多行：每行一个选项
+  const inlineRegex = /([A-D])\.\s*([^A-D✅\n\r]*?)(?=\s*[A-D]\.\s*|\s*✅|\s*$|$)/g
+  let m: RegExpExecArray | null
+
+  // 首先尝试匹配分离的行格式
+  const lineRegex = /^\s*([A-D])\.\s*(.*?)\s*$/gm
+  const lineMatches: { letter: string; text: string }[] = []
+  while ((m = lineRegex.exec(body)) !== null) {
+    lineMatches.push({ letter: m[1], text: m[2].trim() })
+  }
+
+  if (lineMatches.length >= 2) {
+    // 行格式：每行一个选项
+    // 按字母顺序排列
+    const seen = new Set<string>()
+    for (const lm of lineMatches) {
+      // 避免重复（内联格式也会匹配行格式）
+      const key = lm.letter + ':' + lm.text
+      if (!seen.has(key)) {
+        seen.add(key)
+        options.push(lm.text)
+      }
+    }
+  }
+
+  // 如果行格式没有提取到足够选项，尝试内联格式
+  if (options.length < 2) {
+    // 找到第一个 A. 的位置，提取到 ✅ 或末尾
+    const startMatch = /A\.\s*/.exec(body)
+    if (startMatch) {
+      const relevant = body.slice(startMatch.index)
+      const endMatch = /✅/.exec(relevant)
+      const optionText = endMatch ? relevant.slice(0, endMatch.index) : relevant
+
+      // 按 A. B. C. D. 分割
+      const parts = optionText.split(/\s*([A-D])\.\s*/)
+      // parts[0] 为空，parts[1]='A', parts[2]='内容', parts[3]='B', ...
+      let currentLetter = ''
+      for (let i = 1; i < parts.length; i++) {
+        if (/^[A-D]$/.test(parts[i])) {
+          currentLetter = parts[i]
+        } else if (currentLetter && parts[i].trim()) {
+          options.push(parts[i].trim())
+          currentLetter = ''
+        }
+      }
+    }
+  }
+
+  return options
+}
+
+function extractStem(body: string, typeTag: string): string {
+  // 找到第一个 A. 选项的位置
+  const optionStart = body.search(/[A-D]\.\s*/)
+  // 找到 ✅ 答案的位置
+  const answerStart = body.search(/✅/)
+
+  let stemEnd = body.length
+  if (optionStart >= 0) stemEnd = Math.min(stemEnd, optionStart)
+  if (answerStart >= 0) stemEnd = Math.min(stemEnd, answerStart)
+
+  let stem = body.slice(0, stemEnd)
+
+  // 清理：移除题号行残留、题型标签、纯数字行
+  stem = stem
+    .replace(/^\s*\d+\.\s*\[[^\]]*\]\s*/, '')  // 去除前面的题号标签
+    .replace(/\s+/g, ' ')
+    .trim()
+
+  return stem
+}
+
+function normalizeAnswer(answer: string, type: QuestionType, options: string[]): string {
+  // 判断题：如果答案是 "对" 或 "错"，映射到 A/B
+  if (type === 'true-false') {
+    if (answer === '对') return 'A'
+    if (answer === '错') return 'B'
+  }
+  return answer
 }
 
 function inferType(stem: string, options: string[], answer: string): QuestionType {
@@ -121,6 +217,5 @@ function inferType(stem: string, options: string[], answer: string): QuestionTyp
     return 'short-answer'
   }
 
-  // 默认
   return options.length > 0 ? 'single' : 'short-answer'
 }
