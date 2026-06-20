@@ -10,7 +10,7 @@ export async function extractPdfText(file: File): Promise<string> {
   const arrayBuffer = await file.arrayBuffer()
 
   // 使用 CMap 支持中日韩文字的正确解码
-  const cMapUrl = new URL('pdfjs-dist/cmaps/', import.meta.url).toString()
+  const cMapUrl = '/cmaps/'
 
   const pdf = await pdfjsLib.getDocument({
     data: arrayBuffer,
