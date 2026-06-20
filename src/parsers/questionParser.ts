@@ -53,11 +53,16 @@ function extractStem(block: string): string {
     }
     // 跳过选项行
     if (/^[A-D]\.\s/.test(trimmed)) continue
-    // 跳过答案行
+    // 跳过答案行（含"答案"前缀的）
     if (/^答案[:：]/.test(trimmed)) continue
+    // 跳过答案行（只有冒号的格式 : A, : CD, : 等）
+    if (/^\s*:\s*[A-D]*\s*$/.test(line)) continue
+    // 跳过章节头行（如 "1: -"）
+    if (/^\d+:\s*-/.test(trimmed)) continue
+    // 跳过统计行
+    if (/^:\s*\d+/.test(trimmed) || /^题目数量/.test(trimmed)) continue
     // 跳过章节行
     if (/^第\d+章/.test(trimmed)) continue
-    if (/^题目数量/.test(trimmed)) continue
 
     if (trimmed) stemLines.push(trimmed)
   }
@@ -67,7 +72,7 @@ function extractStem(block: string): string {
 
 function extractOptions(body: string): string[] {
   const options: string[] = []
-  const optionRegex = /^\s*([A-D])\.\s*(.+)/gm
+  const optionRegex = /^\s*([A-D])\.\s*(.*)/gm
   let m: RegExpExecArray | null
   while ((m = optionRegex.exec(body)) !== null) {
     options.push(m[2].trim())
@@ -76,9 +81,18 @@ function extractOptions(body: string): string[] {
 }
 
 function extractAnswer(body: string): string {
+  // 优先匹配 "答案: X" 格式
   const answerRegex = /答案[:：]\s*(.+)/i
   const m = answerRegex.exec(body)
-  return m ? m[1].trim() : ''
+  if (m) return m[1].trim()
+
+  // 回退匹配纯 ": X" 格式（中文"答案"可能在 PDF 提取中丢失）
+  // 匹配行末的 ": A", ": CD", ": ABCD" 或 ": " 空答案
+  const fallbackRegex = /^[ \t]*:\s*([A-Da-d]*)\s*$/m
+  const fm = fallbackRegex.exec(body)
+  if (fm) return fm[1].trim()
+
+  return ''
 }
 
 function inferType(stem: string, options: string[], answer: string): QuestionType {
