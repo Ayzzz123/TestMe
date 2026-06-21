@@ -23,5 +23,8 @@
       "Bash(git -C /c/Users/29603/Desktop/TestMe config user.email \"29603@test.me\")",
       "Bash(git -C /c/Users/29603/Desktop/TestMe config user.name \"Developer\")"
     ]
-  }
+  },
+  "enabledMcpjsonServers": [
+    "playwright"
+  ]
 }
