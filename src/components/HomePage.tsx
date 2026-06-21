@@ -41,7 +41,7 @@ export function HomePage({ onStartQuiz }: Props) {
           <div className="inline-flex items-center justify-center w-16 h-16 bg-white rounded-2xl shadow-sm border border-gray-100 mb-5">
             <span className="text-3xl">📝</span>
           </div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-2 tracking-tight">模拟考试</h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-2 tracking-tight">TestMe</h1>
           <p className="text-gray-500 text-lg">选择科目，逐题自测，自动评分</p>
         </div>
 
