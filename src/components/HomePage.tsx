@@ -14,13 +14,13 @@ interface HomeworkChapter {
 }
 
 const AVIONICS_CHAPTERS: HomeworkChapter[] = [
-  { index: 1, name: '自动飞行系统-系统概述 自动驾驶 飞行指引 自动油门（飞行管理与自动飞行控制系统）', start: 0, end: 16 },
-  { index: 2, name: '导航系统-自主式导航（无线电高度表、气象雷达、EGPWS、TCAS）', start: 17, end: 27 },
-  { index: 3, name: '导航系统-无线电导航（仪表着陆系统、全向信标、测距机）', start: 28, end: 43 },
-  { index: 4, name: '导航系统-ADIRS 及备用仪表（大气数据与惯性基准系统）', start: 44, end: 57 },
-  { index: 5, name: '通信系统-机上通信及应急通信设备（音频管理、CVR、ELT、内话）', start: 58, end: 74 },
-  { index: 6, name: '通信系统-无线电通信（VHF、HF、卫星通信、ACARS）', start: 75, end: 91 },
-  { index: 7, name: '指示与记录系统（EFIS/ECAM、FDR、CFDS、时钟）', start: 92, end: 111 },
+  { index: 1, name: '自动飞行系统-系统概述 自动驾驶 飞行指引 自动油门', start: 0, end: 16 },
+  { index: 2, name: '导航系统-自主式导航', start: 17, end: 27 },
+  { index: 3, name: '导航系统-无线电导航', start: 28, end: 43 },
+  { index: 4, name: '导航系统-ADIRS 及备用仪表', start: 44, end: 57 },
+  { index: 5, name: '通信系统-机上通信及应急通信设备', start: 58, end: 74 },
+  { index: 6, name: '通信系统-无线电通信', start: 75, end: 91 },
+  { index: 7, name: '指示与记录系统', start: 92, end: 111 },
 ]
 
 export function HomePage({ onStartQuiz }: Props) {
