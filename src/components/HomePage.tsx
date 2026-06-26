@@ -21,6 +21,7 @@ const AVIONICS_CHAPTERS: HomeworkChapter[] = [
   { index: 5, name: '通信系统-机上通信及应急通信设备', start: 58, end: 74 },
   { index: 6, name: '通信系统-无线电通信', start: 75, end: 91 },
   { index: 7, name: '指示与记录系统', start: 92, end: 111 },
+  { index: 8, name: '自动飞行系统2', start: 112, end: 136 },
 ]
 
 export function HomePage({ onStartQuiz }: Props) {
@@ -68,7 +69,7 @@ export function HomePage({ onStartQuiz }: Props) {
                 <div className="text-left">
                   <h3 className="font-bold text-gray-800 text-lg">航空电子系统 Ⅰ</h3>
                   <p className="text-sm text-gray-400">
-                    共 7 次作业，合计 {allQuestions.length} 题
+                    共 8 次作业，合计 {allQuestions.length} 题
                   </p>
                 </div>
               </div>
