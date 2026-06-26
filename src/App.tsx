@@ -1,8 +1,10 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect, useRef } from 'react'
 import type { Question, GradingResult, AppPage } from './types'
 import { HomePage } from './components/HomePage'
 import { QuizPage } from './components/QuizPage'
 import { ResultPage } from './components/ResultPage'
+
+const PAGE_HISTORY: AppPage[] = ['upload', 'quiz', 'result']
 
 export default function App() {
   const [page, setPage] = useState<AppPage>('upload')
@@ -12,8 +14,36 @@ export default function App() {
   const [maxScore, setMaxScore] = useState(0)
   const [examTitle, setExamTitle] = useState('')
 
+  // 跟踪当前页面以便 popstate 时使用
+  const pageRef = useRef<AppPage>(page)
+  pageRef.current = page
+
+  // 首次加载时推入初始页面状态
+  useEffect(() => {
+    if (window.history.state?.appPage === undefined) {
+      window.history.replaceState({ appPage: 'upload' }, '', '')
+    }
+  }, [])
+
+  // 监听浏览器后退/前进
+  useEffect(() => {
+    const handlePopState = (e: PopStateEvent) => {
+      const targetPage = e.state?.appPage
+      if (targetPage && PAGE_HISTORY.includes(targetPage)) {
+        pageRef.current = targetPage
+        setPage(targetPage)
+      }
+    }
+    window.addEventListener('popstate', handlePopState)
+    return () => window.removeEventListener('popstate', handlePopState)
+  }, [])
+
+  const navigateTo = useCallback((newPage: AppPage) => {
+    window.history.pushState({ appPage: newPage }, '', '')
+    setPage(newPage)
+  }, [])
+
   const handleStartQuiz = useCallback((q: Question[], title: string) => {
-    // 每题分值 = 100 / 题数，保留两位小数；最后一题补齐差额确保满分精确 100
     const raw = 100 / q.length
     const perQuestion = Math.floor(raw * 100) / 100
     const remainder = Math.round((100 - perQuestion * (q.length - 1)) * 100) / 100
@@ -23,23 +53,23 @@ export default function App() {
     }))
     setQuestions(normalized)
     setExamTitle(title)
-    setPage('quiz')
-  }, [])
+    navigateTo('quiz')
+  }, [navigateTo])
 
   const handleFinish = useCallback((r: GradingResult[], ts: number, ms: number) => {
     setResults(r)
     setTotalScore(ts)
     setMaxScore(ms)
-    setPage('result')
-  }, [])
+    navigateTo('result')
+  }, [navigateTo])
 
   const handleRestart = useCallback(() => {
-    setPage('quiz')
-  }, [])
+    navigateTo('quiz')
+  }, [navigateTo])
 
   const handleGoHome = useCallback(() => {
-    setPage('upload')
-  }, [])
+    navigateTo('upload')
+  }, [navigateTo])
 
   if (page === 'upload') {
     return <HomePage onStartQuiz={handleStartQuiz} />
