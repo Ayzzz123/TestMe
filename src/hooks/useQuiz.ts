@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect } from 'react'
 import type { Question, QuizSession } from '../types'
-import { saveProgress, loadProgress } from '../utils/storage'
+import { saveProgress, loadProgress, clearProgress } from '../utils/storage'
 
 interface UseQuizReturn {
   questions: Question[]
@@ -48,6 +48,7 @@ export function useQuiz(): UseQuizReturn {
   }, [questions, userAnswers, currentIndex])
 
   const startQuiz = useCallback((q: Question[]) => {
+    clearProgress()
     setQuestions(q)
     setUserAnswers({})
     setCurrentIndex(0)
