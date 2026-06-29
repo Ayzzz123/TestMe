@@ -29,6 +29,8 @@ const STRUCTURE_CHAPTERS: HomeworkChapter[] = [
   { index: 1, name: '飞机结构损伤与修理基础', start: 0, end: 9 },
   { index: 2, name: '飞机结构部件与修理准则', start: 10, end: 19 },
   { index: 3, name: '飞机结构损伤综合', start: 20, end: 29 },
+  { index: 4, name: '飞机结构检查与复合材料基础', start: 30, end: 34 },
+  { index: 5, name: '铆钉规范与飞机检查方法', start: 35, end: 39 },
 ]
 
 export function HomePage({ onStartQuiz }: Props) {
@@ -150,7 +152,7 @@ export function HomePage({ onStartQuiz }: Props) {
                 <div className="text-left">
                   <h3 className="font-bold text-gray-800 text-lg">飞机结构与部附件修理</h3>
                   <p className="text-sm text-gray-400">
-                    共 3 次作业，合计 {allStructureQuestions.length} 题
+                    共 5 次作业，合计 {allStructureQuestions.length} 题
                   </p>
                 </div>
               </div>
