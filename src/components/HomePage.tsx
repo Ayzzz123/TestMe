@@ -2,6 +2,7 @@ import { useState } from 'react'
 import type { Question } from '../types'
 import avionicsExam from '../data/avionics-exam.json'
 import structureExam from '../data/aircraft-structure-exam.json'
+import { shuffle } from '../utils/shuffle'
 
 interface Props {
   onStartQuiz: (questions: Question[], title: string) => void
@@ -48,6 +49,16 @@ export function HomePage({ onStartQuiz }: Props) {
   const startStructureHomework = (chapter: HomeworkChapter) => {
     const questions = allStructureQuestions.slice(chapter.start, chapter.end + 1)
     onStartQuiz(questions, `飞机结构与部附件修理 — 作业${chapter.index}`)
+  }
+
+  const startAvionicsExam = () => {
+    const questions = shuffle(allQuestions)
+    onStartQuiz(questions, `航空电子系统 Ⅰ — 模拟考试`)
+  }
+
+  const startStructureExam = () => {
+    const questions = shuffle(allStructureQuestions)
+    onStartQuiz(questions, `飞机结构与部附件修理 — 模拟考试`)
   }
 
   return (
@@ -106,6 +117,30 @@ export function HomePage({ onStartQuiz }: Props) {
             {avionicsOpen && (
               <div className="px-6 pb-6">
                 <div className="border-t border-gray-100 pt-5" />
+
+                {/* 模拟考试卡片 */}
+                <div
+                  onClick={startAvionicsExam}
+                  className="group relative bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl p-5 cursor-pointer
+                    hover:from-blue-600 hover:to-blue-700 hover:shadow-lg hover:-translate-y-0.5
+                    transition-all duration-300 mb-4"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">
+                      🏆
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="font-bold text-white text-base">模拟考试</h4>
+                      <p className="text-blue-100 text-sm mt-0.5">
+                        全部 {allQuestions.length} 题 · 乱序 · 100分制
+                      </p>
+                    </div>
+                    <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white group-hover:bg-white/30 transition-all flex-shrink-0">
+                      →
+                    </div>
+                  </div>
+                </div>
+
                 <div className="grid gap-4 sm:grid-cols-2">
                   {AVIONICS_CHAPTERS.map(ch => (
                     <div
@@ -173,6 +208,30 @@ export function HomePage({ onStartQuiz }: Props) {
             {structureOpen && (
               <div className="px-6 pb-6">
                 <div className="border-t border-gray-100 pt-5" />
+
+                {/* 模拟考试卡片 */}
+                <div
+                  onClick={startStructureExam}
+                  className="group relative bg-gradient-to-r from-amber-500 to-orange-600 rounded-xl p-5 cursor-pointer
+                    hover:from-amber-600 hover:to-orange-700 hover:shadow-lg hover:-translate-y-0.5
+                    transition-all duration-300 mb-4"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">
+                      🏆
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="font-bold text-white text-base">模拟考试</h4>
+                      <p className="text-amber-100 text-sm mt-0.5">
+                        全部 {allStructureQuestions.length} 题 · 乱序 · 100分制
+                      </p>
+                    </div>
+                    <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white group-hover:bg-white/30 transition-all flex-shrink-0">
+                      →
+                    </div>
+                  </div>
+                </div>
+
                 <div className="grid gap-4 sm:grid-cols-2">
                   {STRUCTURE_CHAPTERS.map(ch => (
                     <div
