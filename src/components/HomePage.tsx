@@ -121,21 +121,23 @@ export function HomePage({ onStartQuiz }: Props) {
                 {/* 模拟考试卡片 */}
                 <div
                   onClick={startAvionicsExam}
-                  className="group relative bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl p-5 cursor-pointer
-                    hover:from-blue-600 hover:to-blue-700 hover:shadow-lg hover:-translate-y-0.5
+                  className="group relative bg-slate-50/60 border border-gray-100 rounded-xl p-4 cursor-pointer
+                    hover:bg-white hover:shadow-md hover:border-blue-200 hover:-translate-y-0.5
                     transition-all duration-300 mb-4"
                 >
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center text-sm font-bold text-blue-600 shadow-sm border border-gray-100 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                       🏆
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h4 className="font-bold text-white text-base">模拟考试</h4>
-                      <p className="text-blue-100 text-sm mt-0.5">
-                        全部 {allQuestions.length} 题 · 乱序 · 100分制
-                      </p>
+                      <h4 className="font-semibold text-gray-800 text-sm leading-snug">模拟考试</h4>
+                      <div className="flex items-center gap-2 mt-1.5">
+                        <span className="text-xs bg-blue-50 text-blue-600 px-2 py-0.5 rounded-full font-semibold">
+                          {allQuestions.length} 题
+                        </span>
+                      </div>
                     </div>
-                    <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white group-hover:bg-white/30 transition-all flex-shrink-0">
+                    <div className="w-6 h-6 rounded-full bg-white group-hover:bg-blue-50 flex items-center justify-center text-gray-300 group-hover:text-blue-400 transition-all duration-300 mt-1 flex-shrink-0">
                       →
                     </div>
                   </div>
@@ -212,21 +214,23 @@ export function HomePage({ onStartQuiz }: Props) {
                 {/* 模拟考试卡片 */}
                 <div
                   onClick={startStructureExam}
-                  className="group relative bg-gradient-to-r from-amber-500 to-orange-600 rounded-xl p-5 cursor-pointer
-                    hover:from-amber-600 hover:to-orange-700 hover:shadow-lg hover:-translate-y-0.5
+                  className="group relative bg-slate-50/60 border border-gray-100 rounded-xl p-4 cursor-pointer
+                    hover:bg-white hover:shadow-md hover:border-amber-200 hover:-translate-y-0.5
                     transition-all duration-300 mb-4"
                 >
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center text-sm font-bold text-amber-600 shadow-sm border border-gray-100 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                       🏆
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h4 className="font-bold text-white text-base">模拟考试</h4>
-                      <p className="text-amber-100 text-sm mt-0.5">
-                        全部 {allStructureQuestions.length} 题 · 乱序 · 100分制
-                      </p>
+                      <h4 className="font-semibold text-gray-800 text-sm leading-snug">模拟考试</h4>
+                      <div className="flex items-center gap-2 mt-1.5">
+                        <span className="text-xs bg-amber-50 text-amber-600 px-2 py-0.5 rounded-full font-semibold">
+                          {allStructureQuestions.length} 题
+                        </span>
+                      </div>
                     </div>
-                    <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white group-hover:bg-white/30 transition-all flex-shrink-0">
+                    <div className="w-6 h-6 rounded-full bg-white group-hover:bg-amber-50 flex items-center justify-center text-gray-300 group-hover:text-amber-400 transition-all duration-300 mt-1 flex-shrink-0">
                       →
                     </div>
                   </div>
