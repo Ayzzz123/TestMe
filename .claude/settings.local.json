@@ -21,7 +21,19 @@
       "Bash(git -C /c/Users/29603/Desktop/TestMe add -A)",
       "Bash(git -C /c/Users/29603/Desktop/TestMe commit -m 'feat: scaffold Vite + React + TS + TailwindCSS project')",
       "Bash(git -C /c/Users/29603/Desktop/TestMe config user.email \"29603@test.me\")",
-      "Bash(git -C /c/Users/29603/Desktop/TestMe config user.name \"Developer\")"
+      "Bash(git -C /c/Users/29603/Desktop/TestMe config user.name \"Developer\")",
+      "Bash(python -c \"import pip; print\\('pip available'\\)\")",
+      "Bash(python -c \"import PyPDF2; print\\('PyPDF2 available'\\)\")",
+      "Bash(python -c \"import pdfplumber; print\\('pdfplumber available'\\)\")",
+      "Bash(python -c \"import pikepdf; print\\('pikepdf available'\\)\")",
+      "Bash(pip install *)",
+      "Bash(python *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(gh run *)",
+      "Bash(npm run *)",
+      "Bash(npm test *)"
     ]
   },
   "enabledMcpjsonServers": [
