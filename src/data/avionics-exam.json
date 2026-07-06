@@ -1,1 +1,2009 @@
-[{"id": "q1", "type": "single", "stem": "自动油门(A/T)在巡航阶段通常优先控制的参数是?", "options": ["发动机 N1 转速", "飞机航向", "起落架放下速度", "飞机俯仰角"], "answer": "A", "explanation": "", "chapter": "", "score": 5}, {"id": "q2", "type": "single", "stem": "自动驾驶横滚通道主要控制的舵面是?", "options": ["副翼 / 扰流板", "方向舵", "升降舵", "水平安定面"], "answer": "A", "explanation": "", "chapter": "", "score": 5}, {"id": "q3", "type": "single", "stem": "自动着陆系统在飞机接地前，自动油门(A/T)通常会执行的动作是?", "options": ["收油门至慢车(IDLE)位置", "保持巡航推力", "增加推力以维持爬升率", "控制 N1 至最大起飞推力"], "answer": "A", "explanation": "", "chapter": "", "score": 5}, {"id": "q4", "type": "single", "stem": "大气数据惯性基准组件(ADIRU)不向自动飞行系统提供的信息是?", "options": ["真空速(TAS)", "发动机排气温度(EGT)", "飞机姿态角", "高度"], "answer": "B", "explanation": "", "chapter": "", "score": 5}, {"id": "q5", "type": "single", "stem": "飞行指引仪(FD)的模式选择主要依据哪个系统的输入?", "options": ["发动机控制系统", "起落架控制系统", "飞行管理系统(FMS)的飞行计划", "客舱压力控制系统"], "answer": "C", "explanation": "", "chapter": "", "score": 5}, {"id": "q6", "type": "single", "stem": "自动驾驶接通时，飞行指引仪(FD)指令通常处于?", "options": ["居中位置", "消失不显示", "随机闪烁", "大幅度偏转"], "answer": "A", "explanation": "", "chapter": "", "score": 5}, {"id": "q7", "type": "single", "stem": "空客 A320 中实现偏航阻尼、方向舵配平、包络保护的计算机是?", "options": ["FCC", "FMGC", "ELAC", "FAC 飞行增稳计算机"], "answer": "D", "explanation": "", "chapter": "", "score": 5}, {"id": "q8", "type": "single", "stem": "自动油门在起飞 / 复飞(TO/GA)时工作在?", "options": ["垂直速度模式", "推力模式", "高度保持模式", "速度模式"], "answer": "B", "explanation": "", "chapter": "", "score": 5}, {"id": "q9", "type": "single", "stem": "自动驾驶 CWS 模式的控制指令来源是?", "options": ["导航台信号", "大气数据计算机", "飞行员操纵盘 / 杆的力传感器", "飞行管理计算机"], "answer": "C", "explanation": "", "chapter": "", "score": 5}, {"id": "q10", "type": "single", "stem": "自动驾驶俯仰通道主要控制的舵面是?", "options": ["升降舵 / 水平安定面", "副翼", "方向舵", "襟翼"], "answer": "A", "explanation": "", "chapter": "", "score": 5}, {"id": "q11", "type": "single", "stem": "自动驾驶 CMD 指令模式的控制指令来源是?", "options": ["人工配平电门", "飞行员操纵力传感器", "控制面板与飞行管理系统", "舵面位置反馈"], "answer": "C", "explanation": "", "chapter": "", "score": 5}, {"id": "q12", "type": "multiple", "stem": "多数民航飞机的自动驾驶仪具有的工作通道包含( )。", "options": ["推力通道", "偏航通道", "横滚通道", "俯仰通道"], "answer": "CD", "explanation": "", "chapter": "", "score": 5}, {"id": "q13", "type": "multiple", "stem": "典型自动飞行系统(AFS)包含哪些子系统?", "options": ["自动油门 A/T", "自动驾驶 AP", "飞行指引 FD", "偏航阻尼 YD 与自动配平"], "answer": "ABCD", "explanation": "", "chapter": "", "score": 5}, {"id": "q14", "type": "multiple", "stem": "自动油门系统的基本工作模式有?", "options": ["高度模式", "航向模式", "速度模式", "推力模式"], "answer": "CD", "explanation": "", "chapter": "", "score": 5}, {"id": "q15", "type": "multiple", "stem": "A320 飞机的自动驾驶系统可以实现的功能有( )。", "options": ["自动降落", "自动起飞", "自动滑行转弯", "自动巡航"], "answer": "ACD", "explanation": "", "chapter": "", "score": 5}, {"id": "q16", "type": "true-false", "stem": "正常飞行过程中，同一时间可以接通两部自动驾驶仪共同工作。", "options": ["对", "错"], "answer": "B", "explanation": "", "chapter": "", "score": 5}, {"id": "q17", "type": "true-false", "stem": "电传自动推力系统工作时，油门杆会随着系统计算的推力自动移动。", "options": ["对", "错"], "answer": "B", "explanation": "", "chapter": "", "score": 5}, {"id": "q18", "type": "single", "stem": "A320 飞机 RA 收发机的安装位置是?", "options": ["后货仓", "前电子舱", "主电子舱", "THS 舱"], "answer": "A", "explanation": "", "chapter": "", "score": 5}, {"id": "q19", "type": "single", "stem": "以下几种情况可以进行气象雷达操作或测试的是?", "options": ["前方 50 米有工作人员", "飞机加油过程中", "飞机在机库内", "前方 500 米有山峰"], "answer": "D", "explanation": "", "chapter": "", "score": 5}, {"id": "q20", "type": "single", "stem": "导航系统警告信息显示优先顺序是", "options": ["EGPWS 地形警告、PWS 风切变警告、TCAS RA", "EGPWS 地形警告、TCAS RA、PWS 风切变警告", "PWS 风切变警告、EGPWS 地形警告、TCAS RA", "TCAS RA、EGPWS 地形警告、PWS 风切变警告"], "answer": "C", "explanation": "", "chapter": "", "score": 5}, {"id": "q21", "type": "single", "stem": "ND 的气象雷达信息不能在下列哪种模式下显示", "options": ["ROSE/ILS", "ARC", "ROSE/NAV", "PLAN"], "answer": "D", "explanation": "", "chapter": "", "score": 5}, {"id": "q22", "type": "single", "stem": "无线电高度显示在", "options": ["PFD 上姿态球下部", "A+B+C", "ECAM/SD 永久显示区", "ND 左上角"], "answer": "A", "explanation": "", "chapter": "", "score": 5}, {"id": "q23", "type": "single", "stem": "民用机载无线电高度表的测高范围是( )。", "options": ["0-2500ft", "0-25000ft", "0-250ft", "0-2500m"], "answer": "A", "explanation": "", "chapter": "", "score": 5}, {"id": "q24", "type": "true-false", "stem": "EGPWS 系统在驾驶舱里没有相关的控制面板 ( )", "options": ["对", "错"], "answer": "B", "explanation": "", "chapter": "", "score": 5}, {"id": "q25", "type": "true-false", "stem": "气象雷达天线与气象雷达收发机需要使用波导管进行连接", "options": ["对", "错"], "answer": "A", "explanation": "", "chapter": "", "score": 5}, {"id": "q26", "type": "true-false", "stem": "EGPWS 系统可以独立工作，不需要其他计算机进行交互配合 ( )", "options": ["对", "错"], "answer": "B", "explanation": "", "chapter": "", "score": 5}, {"id": "q27", "type": "multiple", "stem": "现代飞机气象雷达的功能有", "options": ["探测风切变", "探测降水", "探测地形", "探测湍流"], "answer": "ABCD", "explanation": "", "chapter": "", "score": 5}, {"id": "q28", "type": "multiple", "stem": "FMC 的主要功能有（）", "options": ["导航功能", "性能计算", "制导功能", "配平功能"], "answer": "ABC", "explanation": "", "chapter": "", "score": 5}, {"id": "q29", "type": "single", "stem": "某 A320 飞机短停时机组反映仪表着陆系统 1 号故障，维修人员可以尝试重置的计算机是", "options": ["ILS 2", "MMR 1", "MMR 2", "ILS 1"], "answer": "B", "explanation": "", "chapter": "", "score": 5}, {"id": "q30", "type": "single", "stem": "ILS 系统用于在能见度不良情况下引导飞机（）着陆", "options": ["以正确的姿态", "沿正确的航向对准跑道中心线", "以正确的高度", "沿正确的航向/下滑道着陆"], "answer": "D", "explanation": "", "chapter": "", "score": 5}, {"id": "q31", "type": "single", "stem": "国际民航组织规定，ILS 下滑角一般应该是", "options": ["等于 3°", "小于 3°", "大于 3°", "不确定"], "answer": "A", "explanation": "", "chapter": "", "score": 5}, {"id": "q32", "type": "single", "stem": "ILS2 的显示信号输出到", "options": ["PFD1 和 ND2", "PFD2 和 ND1", "PFD2 和 ND2", "PFD1 和 ND1"], "answer": "B", "explanation": "", "chapter": "", "score": 5}, {"id": "q33", "type": "single", "stem": "VOR 接收机可直接向飞行员提供（）信息", "options": ["飞机的磁方位", "预选航道", "飞机的航向", "飞机的航迹"], "answer": "A", "explanation": "", "chapter": "", "score": 5}, {"id": "q34", "type": "single", "stem": "防撞系统 TCASⅡ需要利用相遇飞机的（）等信息", "options": ["距离、方位、高度差、接近率", "距离、位置、接近率", "距离、方位、航道偏差", "位置、相对速度、航向"], "answer": "A", "explanation": "", "chapter": "", "score": 5}, {"id": "q35", "type": "single", "stem": "当飞机在下滑道上方时，ILS 接收机所接受的", "options": ["90HZ 调制信号大于 150HZ 调制信号", "90HZ 调制信号和 90HZ 调制信号均等于零", "90HZ 调制信号等于 150HZ 调制信号", "150HZ 调制信号大于 90HZ 调制信号"], "answer": "A", "explanation": "", "chapter": "", "score": 5}, {"id": "q36", "type": "single", "stem": "TCASⅡ发出的决断咨询（RA）用于", "options": ["提醒飞行员进行垂直避让", "自动实施水平避让", "自动实施垂直避让", "提醒飞行员进行水平避让"], "answer": "A", "explanation": "", "chapter": "", "score": 5}, {"id": "q37", "type": "single", "stem": "TCAS 系统的主要功用是", "options": ["用来提醒机组在同一空域可能存在与其他飞机相撞的危险", "当出现 RA 警告时，自动改变飞机高度", "当飞机过于接近地形处于不安全状态下给机组提供提醒", "当出现 RA 警告时，自动改变飞机升降速度"], "answer": "A", "explanation": "", "chapter": "", "score": 5}, {"id": "q38", "type": "single", "stem": "TCAS 系统的控制面板位于()", "options": ["驾驶舱头顶面板", "驾驶舱中央仪表板", "驾驶舱中央操纵台，与 ATC 共用一个面板", "驾驶舱中央操纵台"], "answer": "C", "explanation": "", "chapter": "", "score": 5}, {"id": "q39", "type": "multiple", "stem": "TCAS 系统在探测到危险接近 RA 级别下会如何提醒飞行员:(多选)", "options": ["扬声器发出合成语音分别给两架飞机提示\"Descend\"和\"climb\"进行避让", "扬声器发出合成语音提示\"Traffic\"", "PFD 指示垂直速度限制", "ND 红色方块指示入侵飞机相对方位和运动趋势"], "answer": "ACD", "explanation": "", "chapter": "", "score": 5}, {"id": "q40", "type": "multiple", "stem": "仪表着陆系统的信息可以显示在", "options": ["综合备用仪表", "ND", "PFD", "无线电磁指示器"], "answer": "ABC", "explanation": "", "chapter": "", "score": 5}, {"id": "q41", "type": "multiple", "stem": "现代飞机上，ADF 和 VOR 系统的测量结果会显示在驾驶舱的", "options": ["导航显示器 ND", "备用地平仪 ADI", "主飞行显示器 PFD", "无线电磁指示器 RMI"], "answer": "AD", "explanation": "", "chapter": "", "score": 5}, {"id": "q42", "type": "multiple", "stem": "位于机头雷达罩内的天线有?(多选)", "options": ["下滑道天线", "GPS 天线", "气象雷达天线", "航向道天线"], "answer": "ACD", "explanation": "", "chapter": "", "score": 5}, {"id": "q43", "type": "true-false", "stem": "如图所示为一次雷达的显示图像", "options": ["对", "错"], "answer": "A", "explanation": "", "chapter": "", "score": 5}, {"id": "q44", "type": "true-false", "stem": "ATC 控制面板上的四位识别码可使用范围是 0000-7777，所有数字均可随意分配", "options": ["对", "错"], "answer": "B", "explanation": "", "chapter": "", "score": 5}, {"id": "q45", "type": "single", "stem": "从分类方法上看，下列属于自备(独立)式导航系统的是:", "options": ["ADIRU", "ADF", "VOR", "ILS"], "answer": "A", "explanation": "", "chapter": "", "score": 5}, {"id": "q46", "type": "single", "stem": "在 ADIRS 中，ADR 输出的参数有( )", "options": ["空速，高度，温度", "升降速度、地速、风速", "位置，姿态，航向", "高度，空速，航向"], "answer": "A", "explanation": "", "chapter": "", "score": 5}, {"id": "q47", "type": "single", "stem": "GPS 有关的的卫星信息和详细位置数据在哪里可以看到", "options": ["MCDU 的 GPS 页面", "PFD", "ECAM 下显示器", "ND"], "answer": "A", "explanation": "", "chapter": "", "score": 5}, {"id": "q48", "type": "single", "stem": "现代航空中，最基本.核心的导航手段是", "options": ["无线电导航", "星基导航", "复合型导航", "天文导航"], "answer": "A", "explanation": "", "chapter": "", "score": 5}, {"id": "q49", "type": "single", "stem": "现代大型运输机使用大气数据组件 ADM，它的作用是什么", "options": ["大气数据组件利用外部大气温度计算出正确数值", "它将静压和全压转换为数字数据，输送到大气数据计算机", "将静压转换为数字信号，并修正信号源误差后加到大气数据计算机", "它将电信号转换为大气数据计算机的气动压力"], "answer": "B", "explanation": "", "chapter": "", "score": 5}, {"id": "q50", "type": "single", "stem": "综合电子备用仪表的电源来自于", "options": ["交流主汇流条 AC ESS BUS", "直流汇流条 DC BUS", "交流汇流条 AC BUS", "电瓶"], "answer": "D", "explanation": "", "chapter": "", "score": 5}, {"id": "q51", "type": "single", "stem": "ADIRU 由哪两个模块组成?", "options": ["ADR 和 IR", "ADR 和 MMR", "IR 和 MMR", "ADM 和 IRS"], "answer": "A", "explanation": "", "chapter": "", "score": 5}, {"id": "q52", "type": "true-false", "stem": "做 ADR 探头有关工作时，为了保险起见，可以把手册没有要求拔出的并行系统跳开关也一起 拔掉 ( )", "options": ["对", "错"], "answer": "B", "explanation": "", "chapter": "", "score": 5}, {"id": "q53", "type": "true-false", "stem": "每打开一个 ADIRU，ON BAT 灯亮 3 秒钟 用于测试 ADIRU 与电瓶的连接状态 ( )", "options": ["对", "错"], "answer": "A", "explanation": "", "chapter": "", "score": 5}, {"id": "q54", "type": "true-false", "stem": "IR 的校准操作可以在飞机牵引或滑行过程中进行 ( )", "options": ["对", "错"], "answer": "B", "explanation": "", "chapter": "", "score": 5}, {"id": "q55", "type": "true-false", "stem": "集成式备用仪表 ISIS 的测试需要通过 MCDU-CFDS 进行 ( )", "options": ["对", "错"], "answer": "B", "explanation": "", "chapter": "", "score": 5}, {"id": "q56", "type": "true-false", "stem": "ADIRU1 或 2 出现故障时，ADIRU3 可以自动接替工作 ( )", "options": ["对", "错"], "answer": "B", "explanation": "", "chapter": "", "score": 5}, {"id": "q57", "type": "multiple", "stem": "惯性参考系统 IR 的基本组成包含了", "options": ["空速管", "大气数据模块 ADM", "陀螺仪", "加速度计"], "answer": "CD", "explanation": "", "chapter": "", "score": 5}, {"id": "q58", "type": "multiple", "stem": "现代飞机上，ADF 和 VOR 系统的测量结果会显示在驾驶舱的", "options": ["导航显示器 ND", "备用地平仪 ADI", "主飞行显示器 PFD", "无线电磁指示器 RMI"], "answer": "AD", "explanation": "", "chapter": "", "score": 5}, {"id": "q59", "type": "single", "stem": "AMU 的功用是( )。", "options": ["以上都不对", "采集驾驶舱的语音并直接送到话音记录器", "对通讯系统和导航系统的音频进行处理并输出到相应的系统", "对通讯系统的频率进行选择和调谐"], "answer": "C", "explanation": "", "chapter": "", "score": 5}, {"id": "q60", "type": "single", "stem": "（ ）的功用是记录驾驶舱的语音，以便在飞机失事或发生意外之后对事故进行分析。", "options": ["FDR", "CVR", "ELT", "ULD"], "answer": "B", "explanation": "", "chapter": "", "score": 5}, {"id": "q61", "type": "single", "stem": "卫星通信系统使用的天线安装在（", "options": ["飞机腹部", "飞机头部", "飞机背部", "飞机尾部 \r\n\r\n）。"], "answer": "C", "explanation": "", "chapter": "", "score": 5}, {"id": "q62", "type": "single", "stem": "民航飞机实现数据通信的系统是（ ）", "options": ["HF /VHF", "ACARS", "HF", "GPS"], "answer": "B", "explanation": "", "chapter": "", "score": 5}, {"id": "q63", "type": "single", "stem": "话音记录器的功用是（ ）。", "options": ["记录驾驶舱的语音，以便在飞机失事或发生意外之后对事故进行分析", "记录飞机系统的数据信息，以便在飞机失事或发生意外之后对事故进行分析", "记录发动机的警告信息，以便在飞机失事或发生意外之后对事故进行分析", "记录驾驶舱和客舱的语音，以便在飞机失事或发生意外之后对事故进行分析"], "answer": "A", "explanation": "", "chapter": "", "score": 5}, {"id": "q64", "type": "single", "stem": "可以通过飞机机身外部天线发射 406MHz 卫星求救信号的是", "options": ["FDR", "CVR", "固定式 ELT", "便携式 ELT"], "answer": "C", "explanation": "", "chapter": "", "score": 5}, {"id": "q65", "type": "single", "stem": "驾驶舱里飞行员可以用于语音通信的设备有( )。", "options": ["氧气面罩", "手提话筒", "耳麦", "以上都是"], "answer": "D", "explanation": "", "chapter": "", "score": 5}, {"id": "q66", "type": "single", "stem": "飞机牵引过程中，飞行员和机头下部的维修人员联系，可以通过", "options": ["飞行内话", "客舱内话", "客舱广播", "勤务内话"], "answer": "A", "explanation": "", "chapter": "", "score": 5}, {"id": "q67", "type": "single", "stem": "驾驶舱话音记录器什么时候开始通电工作?( )", "options": ["任一台发动机起动好，人工按压地面供电电门", "双发启动好后，人工按压供电电门", "任一台发动机起动好，自动供电", "飞机通电后一直在工作"], "answer": "C", "explanation": "", "chapter": "", "score": 5}, {"id": "q68", "type": "single", "stem": "便携式 ELT 的安装位置一般是在", "options": ["客舱天花板内", "驾驶舱", "电子舱", "客舱行李架内"], "answer": "D", "explanation": "", "chapter": "", "score": 5}, {"id": "q69", "type": "single", "stem": "维修工程中，需要驾驶舱、客舱、飞机机腹下三个区域的维修人员互相联系配合，可以使 用什么方式进行沟通联系？", "options": ["飞行内话", "客舱广播", "客舱内话", "勤务内话"], "answer": "D", "explanation": "", "chapter": "", "score": 5}, {"id": "q70", "type": "true-false", "stem": "飞行员和乘务员均可以进行客舱广播。", "options": ["对", "错"], "answer": "A", "explanation": "", "chapter": "", "score": 5}, {"id": "q71", "type": "true-false", "stem": "便携式 ELT 和固定式 ELT 均可通过驾驶舱控制开启发射信号", "options": ["对", "错"], "answer": "B", "explanation": "", "chapter": "", "score": 5}, {"id": "q72", "type": "true-false", "stem": "机头外接电源面板上的的飞行内话耳机插孔与机身上其他勤务内话插孔同属一个系统，内 部相通", "options": ["对", "错"], "answer": "B", "explanation": "", "chapter": "", "score": 5}, {"id": "q73", "type": "true-false", "stem": "CVR 和 FDR 安装位置相同，开始工作条件相同，记录时间长度相同，且均附带安装了 ULB", "options": ["对", "错"], "answer": "B", "explanation": "", "chapter": "", "score": 5}, {"id": "q74", "type": "multiple", "stem": "驾驶舱话音记录器记录的声音数据来源有", "options": ["机长", "驾驶舱环境音", "第三观察员", "第四观察员", "副驾驶"], "answer": "ABCE", "explanation": "", "chapter": "", "score": 5}, {"id": "q75", "type": "multiple", "stem": "将驾驶舱话音记录器 CVR 中记录抹除的条件及操作是", "options": ["飞机在地面", "系统供电", "停留刹车工作", "按压控制面板上 CVR ERASE 电门超过 2 秒钟"], "answer": "ABCD", "explanation": "", "chapter": "", "score": 5}, {"id": "q76", "type": "single", "stem": "飞行员处于收听状态时，驾驶盘上的\"INT/MIC\"电门应置于（）", "options": ["INT 位", "MIC 位", "中间位", "收听位"], "answer": "C", "explanation": "", "chapter": "", "score": 5}, {"id": "q77", "type": "single", "stem": "（ ）用于完成飞机与飞机或飞机与地面之间的远距离通信联络.", "options": ["高频通信系统", "机内通话系统", "甚高频通信系统", "ACARS"], "answer": "A", "explanation": "", "chapter": "", "score": 5}, {"id": "q78", "type": "single", "stem": "民航飞机实现语音通信的系统是（ ）", "options": ["HF", "HF /VHF", "ACARS", "GPS"], "answer": "B", "explanation": "", "chapter": "", "score": 5}, {"id": "q79", "type": "single", "stem": "（ ）一般都要装天线耦合器，当工作频率改变时，调节天线耦合器内的参数，才达到阻抗 匹配的目的。", "options": ["高频天线", "甚高频天线", "卫星天线", "刀型天线"], "answer": "A", "explanation": "", "chapter": "", "score": 5}, {"id": "q80", "type": "single", "stem": "当飞行员需要通过 VHF 甚高频通信系统与地面人员通话时，飞行员先通过（ ）选定当前工 作的 VHF 通信系统。", "options": ["远程电子组件", "无线电控制面板", "无线电管理面板", "音频控制面板"], "answer": "D", "explanation": "", "chapter": "", "score": 5}, {"id": "q81", "type": "single", "stem": "VHF 通讯系统的工作状态取决于（", "options": ["PTP", "PT", "PPT", "PTT \r\n\r\n）的状态。"], "answer": "D", "explanation": "", "chapter": "", "score": 5}, {"id": "q82", "type": "single", "stem": "（ ）用于完成飞机与飞机或飞机与地面之间的近距离通信联络", "options": ["高频通信系统", "机内通话系统", "甚高频通信系统", "ACARS"], "answer": "C", "explanation": "", "chapter": "", "score": 5}, {"id": "q83", "type": "single", "stem": "当飞行员需要通过 HF 通信系统与地面人员通话时，飞行员先通过（ ）设定当前工作 HF 通 信系统的工作频率。", "options": ["ACP", "RCP", "RMP", "REU"], "answer": "C", "explanation": "", "chapter": "", "score": 5}, {"id": "q84", "type": "single", "stem": "VHF 通讯系统工作在发射状态，需要设置（", "options": ["PPT=0", "PPT=1", "PTT=0", "PTT=1 \r\n\r\n）。"], "answer": "D", "explanation": "", "chapter": "", "score": 5}, {"id": "q85", "type": "single", "stem": "雷达系统的天线与收发机之间通过", "options": ["普通导线", "屏蔽线", "同轴电缆", "波导管 \r\n\r\n传输信号数据"], "answer": "D", "explanation": "", "chapter": "", "score": 5}, {"id": "q86", "type": "multiple", "stem": "高频通信系统的主要部件都安装在", "options": ["机身顶部/底部", "电子舱", "飞机垂尾", "驾驶舱眉毛板"], "answer": "BC", "explanation": "", "chapter": "", "score": 5}, {"id": "q87", "type": "multiple", "stem": "A320 飞机无线电管理面板 RMP 具有的功能有", "options": ["调节 VHF 系统工作频率", "调节 HF 系统工作频率", "选择 HF 工作方式", "对备用导航系统进行调谐"], "answer": "ABCD", "explanation": "", "chapter": "", "score": 5}, {"id": "q88", "type": "multiple", "stem": "音频管理面板上具有的部件有", "options": ["发射按钮", "接收旋钮", "PTT 拨扭电门", "备用导航台接收旋钮"], "answer": "ABCD", "explanation": "", "chapter": "", "score": 5}, {"id": "q89", "type": "multiple", "stem": "无线电通信系统的基本组成一定包括", "options": ["计算机（收发机）", "天线", "控制面板", "耦合器"], "answer": "ABC", "explanation": "", "chapter": "", "score": 5}, {"id": "q90", "type": "true-false", "stem": "当使用无线电通信系统进行语音通话时，调节好频率，选择好接收发射按钮之后，不需要 等待观察，就可以直接操作 PTT 电门进行发话", "options": ["对", "错"], "answer": "B", "explanation": "", "chapter": "", "score": 5}, {"id": "q91", "type": "true-false", "stem": "为了避免无线电通话中造成误解，英文字母及一些数字会被规定发音为特殊的单词，比如 字母 A 发音为 Alpha，数字 9 发音为 Niner", "options": ["对", "错"], "answer": "A", "explanation": "", "chapter": "", "score": 5}, {"id": "q92", "type": "true-false", "stem": "无线电通信系统的部件尺寸往往和无线电波的参数大小有关", "options": ["对", "错"], "answer": "A", "explanation": "", "chapter": "", "score": 5}, {"id": "q93", "type": "single", "stem": "对于咨询( )模式，下列说法错误的是", "options": ["出现咨询的参数会亮暗闪烁", "出现咨询的参数所对应的系统页面会自动调出", "出现咨询的参数所对应的系统的系统页面在 ECP 的按钮灯会亮", "在显示器均工作正常情况下，上 ECAM 显示器底部会出现 ADV 字符，提示机组在下 ECAM 显示器查看相应\r\n的系统页面"], "answer": "D", "explanation": "", "chapter": "", "score": 5}, {"id": "q94", "type": "single", "stem": "某 A320 飞机的导航显示器如图所示，请问该图中 ND 的图像显示模式是", "options": ["ROSE/ILS", "ROSE/NAV", "ARC", "PLAN"], "answer": "D", "explanation": "", "chapter": "", "score": 5}, {"id": "q95", "type": "single", "stem": "DFDR 何时开始供电()", "options": ["一台发动机起动好，自动供电", "双发启动好后，按压供电电门", "一台发动机起动好，人工按压地面电门", "飞机通电后一直在工作"], "answer": "A", "explanation": "", "chapter": "", "score": 5}, {"id": "q96", "type": "single", "stem": "从飞机通电到降落到目的地后关闭发动机，飞机飞行阶段一共分为()段", "options": ["12", "8", "10", "6"], "answer": "C", "explanation": "", "chapter": "", "score": 5}, {"id": "q97", "type": "single", "stem": "副驾驶侧 ND 在正常情况下是由哪个 DMC 驱动的 ?", "options": ["DMC3", "DMC2", "DMC1"], "answer": "B", "explanation": "", "chapter": "", "score": 5}, {"id": "q98", "type": "single", "stem": "EIS 由( )构成", "options": ["PFD 和 ND", "EFIS 和 EACM", "FWC 和 DMC", "SDAC 和 FWC"], "answer": "B", "explanation": "", "chapter": "", "score": 5}, {"id": "q99", "type": "single", "stem": "飞行阶段的划分计算是由哪个计算机完成的", "options": ["SDAC", "LGCIU", "FWC", "CFDIU"], "answer": "C", "explanation": "", "chapter": "", "score": 5}, {"id": "q100", "type": "single", "stem": "CFDS 系统的那些功能可以在空中使用", "options": ["PFR", "CURRENT LEG REPORT 和 CURRENT LEG ECAM REPORT", "LAST LEG ECAM REPORT 和 LAST LEG REPORT", "AVIONICS STATUS"], "answer": "B", "explanation": "", "chapter": "", "score": 5}, {"id": "q101", "type": "single", "stem": "哪台计算机生成红色警告?", "options": ["FWC", "SDAC", "ECP", "DMC"], "answer": "A", "explanation": "", "chapter": "", "score": 5}, {"id": "q102", "type": "single", "stem": "如果正驾驶的 ND 故障，那么 ND 的显示内容可以", "options": ["自动转换到正驾驶的 PFD", "通过按压 PFD/ND 转换按钮开关转换到正驾驶 PFD 上", "通过转动 ECAM/ND 转换开关转换到 ECAM/SD 上", "通过 DMC 转换开关转换到 PFD 上"], "answer": "B", "explanation": "", "chapter": "", "score": 5}, {"id": "q103", "type": "single", "stem": "A320CEO 和 A320NEO 系列机型的主要区别是", "options": ["客舱布局不同", "尺寸不同", "发动机选型不同", "机身外观不同"], "answer": "C", "explanation": "", "chapter": "", "score": 5}, {"id": "q104", "type": "single", "stem": "构成 ECAM 系统的主要计算机有( )", "options": ["FAC、FWC、FMGC", "CFDIU、SDAC、DMC", "SDAC、FWC、DMC", "SDAC、FMGC、FCU"], "answer": "C", "explanation": "", "chapter": "", "score": 5}, {"id": "q105", "type": "single", "stem": "下列部件不属于飞行数据记录系统的是:", "options": ["FDIU", "CVR", "线型加速度计", "DFDR"], "answer": "B", "explanation": "", "chapter": "", "score": 5}, {"id": "q106", "type": "single", "stem": "如果失去 ECAM 上部显示，发动机警告显示自动转换到 ECAM 下部显示，如果需要系统页面 显示，你必须在 ECP 上", "options": ["按下 CLEAR 钮", "按下 RECALL 钮", "关掉对应的 ECAM 显示选择器", "按下并保持相应的系统按钮"], "answer": "D", "explanation": "", "chapter": "", "score": 5}, {"id": "q107", "type": "single", "stem": "发动机主要工作参数在哪里显示?", "options": ["PFD", "ND", "S", "", "E/WD"], "answer": "D", "explanation": "", "chapter": "", "score": 5}, {"id": "q108", "type": "true-false", "stem": "A320 飞机的电子设备舱内部互相通气，均属于增压区域 ( )", "options": ["对", "错"], "answer": "A", "explanation": "", "chapter": "", "score": 5}, {"id": "q109", "type": "true-false", "stem": "下 ECAM 的 SD 显示的所有页面都可以在地面显示 ( )", "options": ["对", "错"], "answer": "B", "explanation": "", "chapter": "", "score": 5}, {"id": "q110", "type": "true-false", "stem": "中国的飞机装载的航空时钟上指示的时间都是北京时间 ( )", "options": ["对", "错"], "answer": "B", "explanation": "", "chapter": "", "score": 5}, {"id": "q111", "type": "true-false", "stem": "CFDS 系统可以同时与左右两部 MCDU 进行交互 ( )", "options": ["对", "错"], "answer": "B", "explanation": "", "chapter": "", "score": 5}, {"id": "q112", "type": "true-false", "stem": "电子舱门的开关等简单工作在维修手册里没有明确依据，实际工作中按照老同事的指导做 即可 ( )", "options": ["对", "错"], "answer": "B", "explanation": "", "chapter": "", "score": 5}, {"id": "q113", "type": "single", "stem": "以下哪种情况会直接导致自动驾驶仪(AP)断开?", "options": ["飞行员手动操作侧杆超过超控阈值", "燃油油量低于警戒值", "襟翼未按进近要求放下", "起落架未锁定"], "answer": "A", "explanation": "", "chapter": "", "score": 5}, {"id": "q114", "type": "single", "stem": "自动飞行系统中马赫配平的主要目的是?", "options": ["防止高速时飞机自动低头", "保持航向稳定", "优化发动机推力", "防止低速失速"], "answer": "A", "explanation": "", "chapter": "", "score": 5}, {"id": "q115", "type": "single", "stem": "速度配平主要工作阶段是?", "options": ["巡航", "起飞与复飞(低速大推力)", "进近", "下降"], "answer": "B", "explanation": "", "chapter": "", "score": 5}, {"id": "q116", "type": "single", "stem": "自动着陆 CAT II/III 运行时，自动驾驶通常采用?", "options": ["单通道工作", "仅偏航通道工作", "仅俯仰通道工作", "双通道(双AP)工作"], "answer": "D", "explanation": "", "chapter": "", "score": 5}, {"id": "q117", "type": "single", "stem": "飞行指引仪(FD)的模式选择主要依据哪个系统的输入?", "options": ["发动机控制系统", "客舱压力控制系统", "飞行管理系统(FMS)的飞行计划", "起落架控制系统"], "answer": "C", "explanation": "", "chapter": "", "score": 5}, {"id": "q118", "type": "single", "stem": "自动飞行系统在\"速度保持(SPD HOLD)\"模式下，若飞机实际速度低于目标速度，系统会通过哪种方式调整?", "options": ["偏转副翼使飞机滚转", "关闭偏航阻尼器", "偏转升降舵使飞机低头(增加速度)", "指令自动油门增加推力"], "answer": "D", "explanation": "", "chapter": "", "score": 5}, {"id": "q119", "type": "single", "stem": "当偏航阻尼器(YD)失效时，驾驶舱通常会出现哪种警告?", "options": ["红色主警告灯点亮", "琥珀色\"YD INOP\"警告灯点亮", "起落架未放下警告", "连续音响警告"], "answer": "B", "explanation": "", "chapter": "", "score": 5}, {"id": "q120", "type": "single", "stem": "自动驾驶仪耦合 ILS 进近时，若突然失去航向台(LOC)信号，自动驾驶仪通常会?", "options": ["控制飞机爬升", "自动断开航向保持模式，发出警告", "切换到人工飞行模式", "继续保持当前航向直至接地"], "answer": "B", "explanation": "", "chapter": "", "score": 5}, {"id": "q121", "type": "single", "stem": "以下哪项不属于自动驾驶脱开警告?", "options": ["红色脱开灯闪烁", "音响警告", "PFD 相关提示", "发动机主警告灯亮"], "answer": "D", "explanation": "", "chapter": "", "score": 5}, {"id": "q122", "type": "single", "stem": "自动驾驶仪(AP)的核心控制部件是?", "options": ["舵面执行机构", "高度表", "姿态传感器", "飞行控制计算机"], "answer": "D", "explanation": "", "chapter": "", "score": 5}, {"id": "q123", "type": "single", "stem": "现代民航飞机自动飞行深度集成设计中，集成自动驾驶、飞行指引、自动油门、偏航阻尼、配平及包络保护的计算机是?", "options": ["飞行管理制导和包络保护计算机 FMGEC", "飞行控制计算机 FCC", "数据采集组件 SDAC", "飞行增稳计算机 FAC"], "answer": "A", "explanation": "", "chapter": "", "score": 5}, {"id": "q124", "type": "single", "stem": "自动驾驶接通时，自动俯仰配平由什么触发?", "options": ["高度偏离 500 英尺", "空速达到 Vmo", "升降舵偏转超过设定值并持续一定时间", "航向偏离 10°"], "answer": "C", "explanation": "", "chapter": "", "score": 5}, {"id": "q125", "type": "single", "stem": "自动驾驶仪耦合 ILS 进近时，控制飞机跟踪下滑道(GS)的是哪个通道?", "options": ["垂直通道", "速度通道", "航向通道", "水平通道"], "answer": "A", "explanation": "", "chapter": "", "score": 5}, {"id": "q126", "type": "single", "stem": "自动飞行\"失效安全(Fail-Safe)\"设计是指?", "options": ["故障时双 AP 同步", "故障时自动转人工", "故障时自动断开，不输出危险指令", "故障时保持姿态不变"], "answer": "C", "explanation": "", "chapter": "", "score": 5}, {"id": "q127", "type": "single", "stem": "偏航阻尼器(YD)主要通过控制哪个舵面抑制荷兰滚?", "options": ["副翼", "水平安定面", "升降舵", "方向舵"], "answer": "D", "explanation": "", "chapter": "", "score": 5}, {"id": "q128", "type": "single", "stem": "偏航阻尼系统(YD)的主要作用是抑制飞机的哪种运动?", "options": ["长周期俯仰振荡", "荷兰滚(Dutch Roll)", "失速", "滚转过度"], "answer": "B", "explanation": "", "chapter": "", "score": 5}, {"id": "q129", "type": "single", "stem": "飞行模式告示牌(FMA)上，预位模式通常显示为?", "options": ["白色", "红色", "琥珀色", "绿色"], "answer": "C", "explanation": "FMA上预位(armed)模式显示琥珀色，激活(active)模式显示绿色。", "chapter": "", "score": 5}, {"id": "q130", "type": "single", "stem": "偏航阻尼器(YD)是通过控制以下哪个部件来实现偏航阻尼功能的?", "options": ["方向舵", "水平安定面", "副翼", "升降舵"], "answer": "A", "explanation": "", "chapter": "", "score": 5}, {"id": "q131", "type": "single", "stem": "自动油门(A/T)的 TO/GA(起飞/复飞)模式通常通过以下哪种操作触发?", "options": ["起落架收起", "飞机达到 V1 速度", "襟翼收起", "飞行员将油门杆推至 TO/GA 位"], "answer": "D", "explanation": "", "chapter": "", "score": 5}, {"id": "q132", "type": "single", "stem": "在模式控制面板(MCP)上选择\"高度保持(ALT HOLD)\"模式后，自动飞行系统主要通过控制哪个部件来维持目标高度?", "options": ["发动机油门(控制推力)", "升降舵(控制俯仰)", "副翼(控制滚转)", "方向舵(控制偏航)"], "answer": "B", "explanation": "", "chapter": "", "score": 5}, {"id": "q133", "type": "single", "stem": "自动驾驶衔接互锁逻辑中，必须先接通的系统是?", "options": ["客舱广播系统", "偏航阻尼器 YD", "气象雷达", "应急定位发射机 ELT"], "answer": "B", "explanation": "", "chapter": "", "score": 5}, {"id": "q134", "type": "single", "stem": "B737NG 非电传飞机自动驾驶的核心计算机是?", "options": ["FAC", "SDAC", "FCC 飞行控制计算机", "FMGC"], "answer": "C", "explanation": "", "chapter": "", "score": 5}, {"id": "q135", "type": "single", "stem": "飞行指引系统(FD)的主要输出形式是?", "options": ["监控起落架位置", "向驾驶员提供姿态指引指令", "直接驱动舵面控制飞机姿态", "自动控制发动机推力"], "answer": "B", "explanation": "", "chapter": "", "score": 5}, {"id": "q136", "type": "multiple", "stem": "以下哪些属于自动驾驶俯仰通道工作方式?", "options": ["航向选择 HDG SEL", "高度保持 ALT HOLD", "下滑道 G/S", "垂直速度 V/S"], "answer": "BCD", "explanation": "", "chapter": "", "score": 5}, {"id": "q137", "type": "multiple", "stem": "以下哪些属于自动驾驶横滚通道工作方式?", "options": ["垂直导航 VNAV", "水平导航 LNAV", "航向保持 HDG HOLD", "航向道 LOC"], "answer": "BCD", "explanation": "", "chapter": "", "score": 5}]
+[
+  {
+    "id": "q1",
+    "type": "single",
+    "stem": "自动油门(A/T)在巡航阶段通常优先控制的参数是?",
+    "options": [
+      "发动机 N1 转速",
+      "飞机航向",
+      "起落架放下速度",
+      "飞机俯仰角"
+    ],
+    "answer": "A",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q2",
+    "type": "single",
+    "stem": "自动驾驶横滚通道主要控制的舵面是?",
+    "options": [
+      "副翼 / 扰流板",
+      "方向舵",
+      "升降舵",
+      "水平安定面"
+    ],
+    "answer": "A",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q3",
+    "type": "single",
+    "stem": "自动着陆系统在飞机接地前，自动油门(A/T)通常会执行的动作是?",
+    "options": [
+      "收油门至慢车(IDLE)位置",
+      "保持巡航推力",
+      "增加推力以维持爬升率",
+      "控制 N1 至最大起飞推力"
+    ],
+    "answer": "A",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q4",
+    "type": "single",
+    "stem": "大气数据惯性基准组件(ADIRU)不向自动飞行系统提供的信息是?",
+    "options": [
+      "真空速(TAS)",
+      "发动机排气温度(EGT)",
+      "飞机姿态角",
+      "高度"
+    ],
+    "answer": "B",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q5",
+    "type": "single",
+    "stem": "飞行指引仪(FD)的模式选择主要依据哪个系统的输入?",
+    "options": [
+      "发动机控制系统",
+      "起落架控制系统",
+      "飞行管理系统(FMS)的飞行计划",
+      "客舱压力控制系统"
+    ],
+    "answer": "C",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q6",
+    "type": "single",
+    "stem": "自动驾驶接通时，飞行指引仪(FD)指令通常处于?",
+    "options": [
+      "居中位置",
+      "消失不显示",
+      "随机闪烁",
+      "大幅度偏转"
+    ],
+    "answer": "A",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q7",
+    "type": "single",
+    "stem": "空客 A320 中实现偏航阻尼、方向舵配平、包络保护的计算机是?",
+    "options": [
+      "FCC",
+      "FMGC",
+      "ELAC",
+      "FAC 飞行增稳计算机"
+    ],
+    "answer": "D",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q8",
+    "type": "single",
+    "stem": "自动油门在起飞 / 复飞(TO/GA)时工作在?",
+    "options": [
+      "垂直速度模式",
+      "推力模式",
+      "高度保持模式",
+      "速度模式"
+    ],
+    "answer": "B",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q9",
+    "type": "single",
+    "stem": "自动驾驶 CWS 模式的控制指令来源是?",
+    "options": [
+      "导航台信号",
+      "大气数据计算机",
+      "飞行员操纵盘 / 杆的力传感器",
+      "飞行管理计算机"
+    ],
+    "answer": "C",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q10",
+    "type": "single",
+    "stem": "自动驾驶俯仰通道主要控制的舵面是?",
+    "options": [
+      "升降舵 / 水平安定面",
+      "副翼",
+      "方向舵",
+      "襟翼"
+    ],
+    "answer": "A",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q11",
+    "type": "single",
+    "stem": "自动驾驶 CMD 指令模式的控制指令来源是?",
+    "options": [
+      "人工配平电门",
+      "飞行员操纵力传感器",
+      "控制面板与飞行管理系统",
+      "舵面位置反馈"
+    ],
+    "answer": "C",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q12",
+    "type": "multiple",
+    "stem": "多数民航飞机的自动驾驶仪具有的工作通道包含( )。",
+    "options": [
+      "推力通道",
+      "偏航通道",
+      "横滚通道",
+      "俯仰通道"
+    ],
+    "answer": "CD",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q13",
+    "type": "multiple",
+    "stem": "典型自动飞行系统(AFS)包含哪些子系统?",
+    "options": [
+      "自动油门 A/T",
+      "自动驾驶 AP",
+      "飞行指引 FD",
+      "偏航阻尼 YD 与自动配平"
+    ],
+    "answer": "ABCD",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q14",
+    "type": "multiple",
+    "stem": "自动油门系统的基本工作模式有?",
+    "options": [
+      "高度模式",
+      "航向模式",
+      "速度模式",
+      "推力模式"
+    ],
+    "answer": "CD",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q15",
+    "type": "multiple",
+    "stem": "A320 飞机的自动驾驶系统可以实现的功能有( )。",
+    "options": [
+      "自动降落",
+      "自动起飞",
+      "自动滑行转弯",
+      "自动巡航"
+    ],
+    "answer": "ACD",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q16",
+    "type": "true-false",
+    "stem": "正常飞行过程中，同一时间可以接通两部自动驾驶仪共同工作。",
+    "options": [
+      "对",
+      "错"
+    ],
+    "answer": "B",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q17",
+    "type": "true-false",
+    "stem": "电传自动推力系统工作时，油门杆会随着系统计算的推力自动移动。",
+    "options": [
+      "对",
+      "错"
+    ],
+    "answer": "B",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q18",
+    "type": "single",
+    "stem": "A320 飞机 RA 收发机的安装位置是?",
+    "options": [
+      "后货仓",
+      "前电子舱",
+      "主电子舱",
+      "THS 舱"
+    ],
+    "answer": "A",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q19",
+    "type": "single",
+    "stem": "以下几种情况可以进行气象雷达操作或测试的是?",
+    "options": [
+      "前方 50 米有工作人员",
+      "飞机加油过程中",
+      "飞机在机库内",
+      "前方 500 米有山峰"
+    ],
+    "answer": "D",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q20",
+    "type": "single",
+    "stem": "导航系统警告信息显示优先顺序是",
+    "options": [
+      "EGPWS 地形警告、PWS 风切变警告、TCAS RA",
+      "EGPWS 地形警告、TCAS RA、PWS 风切变警告",
+      "PWS 风切变警告、EGPWS 地形警告、TCAS RA",
+      "TCAS RA、EGPWS 地形警告、PWS 风切变警告"
+    ],
+    "answer": "C",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q21",
+    "type": "single",
+    "stem": "ND 的气象雷达信息不能在下列哪种模式下显示",
+    "options": [
+      "ROSE/ILS",
+      "ARC",
+      "ROSE/NAV",
+      "PLAN"
+    ],
+    "answer": "D",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q22",
+    "type": "single",
+    "stem": "无线电高度显示在",
+    "options": [
+      "PFD 上姿态球下部",
+      "A+B+C",
+      "ECAM/SD 永久显示区",
+      "ND 左上角"
+    ],
+    "answer": "A",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q23",
+    "type": "single",
+    "stem": "民用机载无线电高度表的测高范围是( )。",
+    "options": [
+      "0-2500ft",
+      "0-25000ft",
+      "0-250ft",
+      "0-2500m"
+    ],
+    "answer": "A",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q24",
+    "type": "true-false",
+    "stem": "EGPWS 系统在驾驶舱里没有相关的控制面板 ( )",
+    "options": [
+      "对",
+      "错"
+    ],
+    "answer": "B",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q25",
+    "type": "true-false",
+    "stem": "气象雷达天线与气象雷达收发机需要使用波导管进行连接",
+    "options": [
+      "对",
+      "错"
+    ],
+    "answer": "A",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q26",
+    "type": "true-false",
+    "stem": "EGPWS 系统可以独立工作，不需要其他计算机进行交互配合 ( )",
+    "options": [
+      "对",
+      "错"
+    ],
+    "answer": "B",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q27",
+    "type": "multiple",
+    "stem": "现代飞机气象雷达的功能有",
+    "options": [
+      "探测风切变",
+      "探测降水",
+      "探测地形",
+      "探测湍流"
+    ],
+    "answer": "ABCD",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q28",
+    "type": "multiple",
+    "stem": "FMC 的主要功能有（）",
+    "options": [
+      "导航功能",
+      "性能计算",
+      "制导功能",
+      "配平功能"
+    ],
+    "answer": "ABC",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q29",
+    "type": "single",
+    "stem": "某 A320 飞机短停时机组反映仪表着陆系统 1 号故障，维修人员可以尝试重置的计算机是",
+    "options": [
+      "ILS 2",
+      "MMR 1",
+      "MMR 2",
+      "ILS 1"
+    ],
+    "answer": "B",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q30",
+    "type": "single",
+    "stem": "ILS 系统用于在能见度不良情况下引导飞机（）着陆",
+    "options": [
+      "以正确的姿态",
+      "沿正确的航向对准跑道中心线",
+      "以正确的高度",
+      "沿正确的航向/下滑道着陆"
+    ],
+    "answer": "D",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q31",
+    "type": "single",
+    "stem": "国际民航组织规定，ILS 下滑角一般应该是",
+    "options": [
+      "等于 3°",
+      "小于 3°",
+      "大于 3°",
+      "不确定"
+    ],
+    "answer": "A",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q32",
+    "type": "single",
+    "stem": "ILS2 的显示信号输出到",
+    "options": [
+      "PFD1 和 ND2",
+      "PFD2 和 ND1",
+      "PFD2 和 ND2",
+      "PFD1 和 ND1"
+    ],
+    "answer": "B",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q33",
+    "type": "single",
+    "stem": "VOR 接收机可直接向飞行员提供（）信息",
+    "options": [
+      "飞机的磁方位",
+      "预选航道",
+      "飞机的航向",
+      "飞机的航迹"
+    ],
+    "answer": "A",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q34",
+    "type": "single",
+    "stem": "防撞系统 TCASⅡ需要利用相遇飞机的（）等信息",
+    "options": [
+      "距离、方位、高度差、接近率",
+      "距离、位置、接近率",
+      "距离、方位、航道偏差",
+      "位置、相对速度、航向"
+    ],
+    "answer": "A",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q35",
+    "type": "single",
+    "stem": "当飞机在下滑道上方时，ILS 接收机所接受的",
+    "options": [
+      "90HZ 调制信号大于 150HZ 调制信号",
+      "90HZ 调制信号和 90HZ 调制信号均等于零",
+      "90HZ 调制信号等于 150HZ 调制信号",
+      "150HZ 调制信号大于 90HZ 调制信号"
+    ],
+    "answer": "A",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q36",
+    "type": "single",
+    "stem": "TCASⅡ发出的决断咨询（RA）用于",
+    "options": [
+      "提醒飞行员进行垂直避让",
+      "自动实施水平避让",
+      "自动实施垂直避让",
+      "提醒飞行员进行水平避让"
+    ],
+    "answer": "A",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q37",
+    "type": "single",
+    "stem": "TCAS 系统的主要功用是",
+    "options": [
+      "用来提醒机组在同一空域可能存在与其他飞机相撞的危险",
+      "当出现 RA 警告时，自动改变飞机高度",
+      "当飞机过于接近地形处于不安全状态下给机组提供提醒",
+      "当出现 RA 警告时，自动改变飞机升降速度"
+    ],
+    "answer": "A",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q38",
+    "type": "single",
+    "stem": "TCAS 系统的控制面板位于()",
+    "options": [
+      "驾驶舱头顶面板",
+      "驾驶舱中央仪表板",
+      "驾驶舱中央操纵台，与 ATC 共用一个面板",
+      "驾驶舱中央操纵台"
+    ],
+    "answer": "C",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q39",
+    "type": "multiple",
+    "stem": "TCAS 系统在探测到危险接近 RA 级别下会如何提醒飞行员:(多选)",
+    "options": [
+      "扬声器发出合成语音分别给两架飞机提示\"Descend\"和\"climb\"进行避让",
+      "扬声器发出合成语音提示\"Traffic\"",
+      "PFD 指示垂直速度限制",
+      "ND 红色方块指示入侵飞机相对方位和运动趋势"
+    ],
+    "answer": "ACD",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q40",
+    "type": "multiple",
+    "stem": "仪表着陆系统的信息可以显示在",
+    "options": [
+      "综合备用仪表",
+      "ND",
+      "PFD",
+      "无线电磁指示器"
+    ],
+    "answer": "ABC",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q41",
+    "type": "multiple",
+    "stem": "现代飞机上，ADF 和 VOR 系统的测量结果会显示在驾驶舱的",
+    "options": [
+      "导航显示器 ND",
+      "备用地平仪 ADI",
+      "主飞行显示器 PFD",
+      "无线电磁指示器 RMI"
+    ],
+    "answer": "AD",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q42",
+    "type": "multiple",
+    "stem": "位于机头雷达罩内的天线有?(多选)",
+    "options": [
+      "下滑道天线",
+      "GPS 天线",
+      "气象雷达天线",
+      "航向道天线"
+    ],
+    "answer": "ACD",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q43",
+    "type": "true-false",
+    "stem": "如图所示为一次雷达的显示图像",
+    "options": [
+      "对",
+      "错"
+    ],
+    "answer": "A",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q44",
+    "type": "true-false",
+    "stem": "ATC 控制面板上的四位识别码可使用范围是 0000-7777，所有数字均可随意分配",
+    "options": [
+      "对",
+      "错"
+    ],
+    "answer": "B",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q45",
+    "type": "single",
+    "stem": "从分类方法上看，下列属于自备(独立)式导航系统的是:",
+    "options": [
+      "ADIRU",
+      "ADF",
+      "VOR",
+      "ILS"
+    ],
+    "answer": "A",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q46",
+    "type": "single",
+    "stem": "在 ADIRS 中，ADR 输出的参数有( )",
+    "options": [
+      "空速，高度，温度",
+      "升降速度、地速、风速",
+      "位置，姿态，航向",
+      "高度，空速，航向"
+    ],
+    "answer": "A",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q47",
+    "type": "single",
+    "stem": "GPS 有关的的卫星信息和详细位置数据在哪里可以看到",
+    "options": [
+      "MCDU 的 GPS 页面",
+      "PFD",
+      "ECAM 下显示器",
+      "ND"
+    ],
+    "answer": "A",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q48",
+    "type": "single",
+    "stem": "现代航空中，最基本.核心的导航手段是",
+    "options": [
+      "无线电导航",
+      "星基导航",
+      "复合型导航",
+      "天文导航"
+    ],
+    "answer": "A",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q49",
+    "type": "single",
+    "stem": "现代大型运输机使用大气数据组件 ADM，它的作用是什么",
+    "options": [
+      "大气数据组件利用外部大气温度计算出正确数值",
+      "它将静压和全压转换为数字数据，输送到大气数据计算机",
+      "将静压转换为数字信号，并修正信号源误差后加到大气数据计算机",
+      "它将电信号转换为大气数据计算机的气动压力"
+    ],
+    "answer": "B",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q50",
+    "type": "single",
+    "stem": "综合电子备用仪表的电源来自于",
+    "options": [
+      "交流主汇流条 AC ESS BUS",
+      "直流汇流条 DC BUS",
+      "交流汇流条 AC BUS",
+      "电瓶"
+    ],
+    "answer": "D",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q51",
+    "type": "single",
+    "stem": "ADIRU 由哪两个模块组成?",
+    "options": [
+      "ADR 和 IR",
+      "ADR 和 MMR",
+      "IR 和 MMR",
+      "ADM 和 IRS"
+    ],
+    "answer": "A",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q52",
+    "type": "true-false",
+    "stem": "做 ADR 探头有关工作时，为了保险起见，可以把手册没有要求拔出的并行系统跳开关也一起 拔掉 ( )",
+    "options": [
+      "对",
+      "错"
+    ],
+    "answer": "B",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q53",
+    "type": "true-false",
+    "stem": "每打开一个 ADIRU，ON BAT 灯亮 3 秒钟 用于测试 ADIRU 与电瓶的连接状态 ( )",
+    "options": [
+      "对",
+      "错"
+    ],
+    "answer": "A",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q54",
+    "type": "true-false",
+    "stem": "IR 的校准操作可以在飞机牵引或滑行过程中进行 ( )",
+    "options": [
+      "对",
+      "错"
+    ],
+    "answer": "B",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q55",
+    "type": "true-false",
+    "stem": "集成式备用仪表 ISIS 的测试需要通过 MCDU-CFDS 进行 ( )",
+    "options": [
+      "对",
+      "错"
+    ],
+    "answer": "B",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q56",
+    "type": "true-false",
+    "stem": "ADIRU1 或 2 出现故障时，ADIRU3 可以自动接替工作 ( )",
+    "options": [
+      "对",
+      "错"
+    ],
+    "answer": "B",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q57",
+    "type": "multiple",
+    "stem": "惯性参考系统 IR 的基本组成包含了",
+    "options": [
+      "空速管",
+      "大气数据模块 ADM",
+      "陀螺仪",
+      "加速度计"
+    ],
+    "answer": "CD",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q58",
+    "type": "multiple",
+    "stem": "现代飞机上，ADF 和 VOR 系统的测量结果会显示在驾驶舱的",
+    "options": [
+      "导航显示器 ND",
+      "备用地平仪 ADI",
+      "主飞行显示器 PFD",
+      "无线电磁指示器 RMI"
+    ],
+    "answer": "AD",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q59",
+    "type": "single",
+    "stem": "AMU 的功用是( )。",
+    "options": [
+      "以上都不对",
+      "采集驾驶舱的语音并直接送到话音记录器",
+      "对通讯系统和导航系统的音频进行处理并输出到相应的系统",
+      "对通讯系统的频率进行选择和调谐"
+    ],
+    "answer": "C",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q60",
+    "type": "single",
+    "stem": "（ ）的功用是记录驾驶舱的语音，以便在飞机失事或发生意外之后对事故进行分析。",
+    "options": [
+      "FDR",
+      "CVR",
+      "ELT",
+      "ULD"
+    ],
+    "answer": "B",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q61",
+    "type": "single",
+    "stem": "卫星通信系统使用的天线安装在（",
+    "options": [
+      "飞机腹部",
+      "飞机头部",
+      "飞机背部",
+      "飞机尾部 \r\n\r\n）。"
+    ],
+    "answer": "C",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q62",
+    "type": "single",
+    "stem": "民航飞机实现数据通信的系统是（ ）",
+    "options": [
+      "HF /VHF",
+      "ACARS",
+      "HF",
+      "GPS"
+    ],
+    "answer": "B",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q63",
+    "type": "single",
+    "stem": "话音记录器的功用是（ ）。",
+    "options": [
+      "记录驾驶舱的语音，以便在飞机失事或发生意外之后对事故进行分析",
+      "记录飞机系统的数据信息，以便在飞机失事或发生意外之后对事故进行分析",
+      "记录发动机的警告信息，以便在飞机失事或发生意外之后对事故进行分析",
+      "记录驾驶舱和客舱的语音，以便在飞机失事或发生意外之后对事故进行分析"
+    ],
+    "answer": "A",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q64",
+    "type": "single",
+    "stem": "可以通过飞机机身外部天线发射 406MHz 卫星求救信号的是",
+    "options": [
+      "FDR",
+      "CVR",
+      "固定式 ELT",
+      "便携式 ELT"
+    ],
+    "answer": "C",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q65",
+    "type": "single",
+    "stem": "驾驶舱里飞行员可以用于语音通信的设备有( )。",
+    "options": [
+      "氧气面罩",
+      "手提话筒",
+      "耳麦",
+      "以上都是"
+    ],
+    "answer": "D",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q66",
+    "type": "single",
+    "stem": "飞机牵引过程中，飞行员和机头下部的维修人员联系，可以通过",
+    "options": [
+      "飞行内话",
+      "客舱内话",
+      "客舱广播",
+      "勤务内话"
+    ],
+    "answer": "A",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q67",
+    "type": "single",
+    "stem": "驾驶舱话音记录器什么时候开始通电工作?( )",
+    "options": [
+      "任一台发动机起动好，人工按压地面供电电门",
+      "双发启动好后，人工按压供电电门",
+      "任一台发动机起动好，自动供电",
+      "飞机通电后一直在工作"
+    ],
+    "answer": "C",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q68",
+    "type": "single",
+    "stem": "便携式 ELT 的安装位置一般是在",
+    "options": [
+      "客舱天花板内",
+      "驾驶舱",
+      "电子舱",
+      "客舱行李架内"
+    ],
+    "answer": "D",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q69",
+    "type": "single",
+    "stem": "维修工程中，需要驾驶舱、客舱、飞机机腹下三个区域的维修人员互相联系配合，可以使 用什么方式进行沟通联系？",
+    "options": [
+      "飞行内话",
+      "客舱广播",
+      "客舱内话",
+      "勤务内话"
+    ],
+    "answer": "D",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q70",
+    "type": "true-false",
+    "stem": "飞行员和乘务员均可以进行客舱广播。",
+    "options": [
+      "对",
+      "错"
+    ],
+    "answer": "A",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q71",
+    "type": "true-false",
+    "stem": "便携式 ELT 和固定式 ELT 均可通过驾驶舱控制开启发射信号",
+    "options": [
+      "对",
+      "错"
+    ],
+    "answer": "B",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q72",
+    "type": "true-false",
+    "stem": "机头外接电源面板上的的飞行内话耳机插孔与机身上其他勤务内话插孔同属一个系统，内 部相通",
+    "options": [
+      "对",
+      "错"
+    ],
+    "answer": "B",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q73",
+    "type": "true-false",
+    "stem": "CVR 和 FDR 安装位置相同，开始工作条件相同，记录时间长度相同，且均附带安装了 ULB",
+    "options": [
+      "对",
+      "错"
+    ],
+    "answer": "B",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q74",
+    "type": "multiple",
+    "stem": "驾驶舱话音记录器记录的声音数据来源有",
+    "options": [
+      "机长",
+      "驾驶舱环境音",
+      "第三观察员",
+      "第四观察员",
+      "副驾驶"
+    ],
+    "answer": "ABCE",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q75",
+    "type": "multiple",
+    "stem": "将驾驶舱话音记录器 CVR 中记录抹除的条件及操作是",
+    "options": [
+      "飞机在地面",
+      "系统供电",
+      "停留刹车工作",
+      "按压控制面板上 CVR ERASE 电门超过 2 秒钟"
+    ],
+    "answer": "ABCD",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q76",
+    "type": "single",
+    "stem": "飞行员处于收听状态时，驾驶盘上的\"INT/MIC\"电门应置于（）",
+    "options": [
+      "INT 位",
+      "MIC 位",
+      "中间位",
+      "收听位"
+    ],
+    "answer": "C",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q77",
+    "type": "single",
+    "stem": "（ ）用于完成飞机与飞机或飞机与地面之间的远距离通信联络.",
+    "options": [
+      "高频通信系统",
+      "机内通话系统",
+      "甚高频通信系统",
+      "ACARS"
+    ],
+    "answer": "A",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q78",
+    "type": "single",
+    "stem": "民航飞机实现语音通信的系统是（ ）",
+    "options": [
+      "HF",
+      "HF /VHF",
+      "ACARS",
+      "GPS"
+    ],
+    "answer": "B",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q79",
+    "type": "single",
+    "stem": "（ ）一般都要装天线耦合器，当工作频率改变时，调节天线耦合器内的参数，才达到阻抗 匹配的目的。",
+    "options": [
+      "高频天线",
+      "甚高频天线",
+      "卫星天线",
+      "刀型天线"
+    ],
+    "answer": "A",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q80",
+    "type": "single",
+    "stem": "当飞行员需要通过 VHF 甚高频通信系统与地面人员通话时，飞行员先通过（ ）选定当前工 作的 VHF 通信系统。",
+    "options": [
+      "远程电子组件",
+      "无线电控制面板",
+      "无线电管理面板",
+      "音频控制面板"
+    ],
+    "answer": "D",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q81",
+    "type": "single",
+    "stem": "VHF 通讯系统的工作状态取决于（",
+    "options": [
+      "PTP",
+      "PT",
+      "PPT",
+      "PTT \r\n\r\n）的状态。"
+    ],
+    "answer": "D",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q82",
+    "type": "single",
+    "stem": "（ ）用于完成飞机与飞机或飞机与地面之间的近距离通信联络",
+    "options": [
+      "高频通信系统",
+      "机内通话系统",
+      "甚高频通信系统",
+      "ACARS"
+    ],
+    "answer": "C",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q83",
+    "type": "single",
+    "stem": "当飞行员需要通过 HF 通信系统与地面人员通话时，飞行员先通过（ ）设定当前工作 HF 通 信系统的工作频率。",
+    "options": [
+      "ACP",
+      "RCP",
+      "RMP",
+      "REU"
+    ],
+    "answer": "C",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q84",
+    "type": "single",
+    "stem": "VHF 通讯系统工作在发射状态，需要设置（",
+    "options": [
+      "PPT=0",
+      "PPT=1",
+      "PTT=0",
+      "PTT=1 \r\n\r\n）。"
+    ],
+    "answer": "D",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q85",
+    "type": "single",
+    "stem": "雷达系统的天线与收发机之间通过",
+    "options": [
+      "普通导线",
+      "屏蔽线",
+      "同轴电缆",
+      "波导管 \r\n\r\n传输信号数据"
+    ],
+    "answer": "D",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q86",
+    "type": "multiple",
+    "stem": "高频通信系统的主要部件都安装在",
+    "options": [
+      "机身顶部/底部",
+      "电子舱",
+      "飞机垂尾",
+      "驾驶舱眉毛板"
+    ],
+    "answer": "BC",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q87",
+    "type": "multiple",
+    "stem": "A320 飞机无线电管理面板 RMP 具有的功能有",
+    "options": [
+      "调节 VHF 系统工作频率",
+      "调节 HF 系统工作频率",
+      "选择 HF 工作方式",
+      "对备用导航系统进行调谐"
+    ],
+    "answer": "ABCD",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q88",
+    "type": "multiple",
+    "stem": "音频管理面板上具有的部件有",
+    "options": [
+      "发射按钮",
+      "接收旋钮",
+      "PTT 拨扭电门",
+      "备用导航台接收旋钮"
+    ],
+    "answer": "ABCD",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q89",
+    "type": "multiple",
+    "stem": "无线电通信系统的基本组成一定包括",
+    "options": [
+      "计算机（收发机）",
+      "天线",
+      "控制面板",
+      "耦合器"
+    ],
+    "answer": "ABC",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q90",
+    "type": "true-false",
+    "stem": "当使用无线电通信系统进行语音通话时，调节好频率，选择好接收发射按钮之后，不需要 等待观察，就可以直接操作 PTT 电门进行发话",
+    "options": [
+      "对",
+      "错"
+    ],
+    "answer": "B",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q91",
+    "type": "true-false",
+    "stem": "为了避免无线电通话中造成误解，英文字母及一些数字会被规定发音为特殊的单词，比如 字母 A 发音为 Alpha，数字 9 发音为 Niner",
+    "options": [
+      "对",
+      "错"
+    ],
+    "answer": "A",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q92",
+    "type": "true-false",
+    "stem": "无线电通信系统的部件尺寸往往和无线电波的参数大小有关",
+    "options": [
+      "对",
+      "错"
+    ],
+    "answer": "A",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q93",
+    "type": "single",
+    "stem": "对于咨询( )模式，下列说法错误的是",
+    "options": [
+      "出现咨询的参数会亮暗闪烁",
+      "出现咨询的参数所对应的系统页面会自动调出",
+      "出现咨询的参数所对应的系统的系统页面在 ECP 的按钮灯会亮",
+      "在显示器均工作正常情况下，上 ECAM 显示器底部会出现 ADV 字符，提示机组在下 ECAM 显示器查看相应\r\n的系统页面"
+    ],
+    "answer": "D",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q94",
+    "type": "single",
+    "stem": "某 A320 飞机的导航显示器如图所示，请问该图中 ND 的图像显示模式是",
+    "options": [
+      "ROSE/ILS",
+      "ROSE/NAV",
+      "ARC",
+      "PLAN"
+    ],
+    "answer": "D",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q95",
+    "type": "single",
+    "stem": "DFDR 何时开始供电()",
+    "options": [
+      "一台发动机起动好，自动供电",
+      "双发启动好后，按压供电电门",
+      "一台发动机起动好，人工按压地面电门",
+      "飞机通电后一直在工作"
+    ],
+    "answer": "A",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q96",
+    "type": "single",
+    "stem": "从飞机通电到降落到目的地后关闭发动机，飞机飞行阶段一共分为()段",
+    "options": [
+      "12",
+      "8",
+      "10",
+      "6"
+    ],
+    "answer": "C",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q97",
+    "type": "single",
+    "stem": "副驾驶侧 ND 在正常情况下是由哪个 DMC 驱动的 ?",
+    "options": [
+      "DMC3",
+      "DMC2",
+      "DMC1"
+    ],
+    "answer": "B",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q98",
+    "type": "single",
+    "stem": "EIS 由( )构成",
+    "options": [
+      "PFD 和 ND",
+      "EFIS 和 EACM",
+      "FWC 和 DMC",
+      "SDAC 和 FWC"
+    ],
+    "answer": "B",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q99",
+    "type": "single",
+    "stem": "飞行阶段的划分计算是由哪个计算机完成的",
+    "options": [
+      "SDAC",
+      "LGCIU",
+      "FWC",
+      "CFDIU"
+    ],
+    "answer": "C",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q100",
+    "type": "single",
+    "stem": "CFDS 系统的那些功能可以在空中使用",
+    "options": [
+      "PFR",
+      "CURRENT LEG REPORT 和 CURRENT LEG ECAM REPORT",
+      "LAST LEG ECAM REPORT 和 LAST LEG REPORT",
+      "AVIONICS STATUS"
+    ],
+    "answer": "B",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q101",
+    "type": "single",
+    "stem": "哪台计算机生成红色警告?",
+    "options": [
+      "FWC",
+      "SDAC",
+      "ECP",
+      "DMC"
+    ],
+    "answer": "A",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q102",
+    "type": "single",
+    "stem": "如果正驾驶的 ND 故障，那么 ND 的显示内容可以",
+    "options": [
+      "自动转换到正驾驶的 PFD",
+      "通过按压 PFD/ND 转换按钮开关转换到正驾驶 PFD 上",
+      "通过转动 ECAM/ND 转换开关转换到 ECAM/SD 上",
+      "通过 DMC 转换开关转换到 PFD 上"
+    ],
+    "answer": "B",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q103",
+    "type": "single",
+    "stem": "A320CEO 和 A320NEO 系列机型的主要区别是",
+    "options": [
+      "客舱布局不同",
+      "尺寸不同",
+      "发动机选型不同",
+      "机身外观不同"
+    ],
+    "answer": "C",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q104",
+    "type": "single",
+    "stem": "构成 ECAM 系统的主要计算机有( )",
+    "options": [
+      "FAC、FWC、FMGC",
+      "CFDIU、SDAC、DMC",
+      "SDAC、FWC、DMC",
+      "SDAC、FMGC、FCU"
+    ],
+    "answer": "C",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q105",
+    "type": "single",
+    "stem": "下列部件不属于飞行数据记录系统的是:",
+    "options": [
+      "FDIU",
+      "CVR",
+      "线型加速度计",
+      "DFDR"
+    ],
+    "answer": "B",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q106",
+    "type": "single",
+    "stem": "如果失去 ECAM 上部显示，发动机警告显示自动转换到 ECAM 下部显示，如果需要系统页面 显示，你必须在 ECP 上",
+    "options": [
+      "按下 CLEAR 钮",
+      "按下 RECALL 钮",
+      "关掉对应的 ECAM 显示选择器",
+      "按下并保持相应的系统按钮"
+    ],
+    "answer": "D",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q107",
+    "type": "single",
+    "stem": "发动机主要工作参数在哪里显示?",
+    "options": [
+      "PFD",
+      "ND",
+      "SD",
+      "E/WD"
+    ],
+    "answer": "D",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q108",
+    "type": "true-false",
+    "stem": "A320 飞机的电子设备舱内部互相通气，均属于增压区域 ( )",
+    "options": [
+      "对",
+      "错"
+    ],
+    "answer": "A",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q109",
+    "type": "true-false",
+    "stem": "下 ECAM 的 SD 显示的所有页面都可以在地面显示 ( )",
+    "options": [
+      "对",
+      "错"
+    ],
+    "answer": "B",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q110",
+    "type": "true-false",
+    "stem": "中国的飞机装载的航空时钟上指示的时间都是北京时间 ( )",
+    "options": [
+      "对",
+      "错"
+    ],
+    "answer": "B",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q111",
+    "type": "true-false",
+    "stem": "CFDS 系统可以同时与左右两部 MCDU 进行交互 ( )",
+    "options": [
+      "对",
+      "错"
+    ],
+    "answer": "B",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q112",
+    "type": "true-false",
+    "stem": "电子舱门的开关等简单工作在维修手册里没有明确依据，实际工作中按照老同事的指导做 即可 ( )",
+    "options": [
+      "对",
+      "错"
+    ],
+    "answer": "B",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q113",
+    "type": "single",
+    "stem": "以下哪种情况会直接导致自动驾驶仪(AP)断开?",
+    "options": [
+      "飞行员手动操作侧杆超过超控阈值",
+      "燃油油量低于警戒值",
+      "襟翼未按进近要求放下",
+      "起落架未锁定"
+    ],
+    "answer": "A",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q114",
+    "type": "single",
+    "stem": "自动飞行系统中马赫配平的主要目的是?",
+    "options": [
+      "防止高速时飞机自动低头",
+      "保持航向稳定",
+      "优化发动机推力",
+      "防止低速失速"
+    ],
+    "answer": "A",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q115",
+    "type": "single",
+    "stem": "速度配平主要工作阶段是?",
+    "options": [
+      "巡航",
+      "起飞与复飞(低速大推力)",
+      "进近",
+      "下降"
+    ],
+    "answer": "B",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q116",
+    "type": "single",
+    "stem": "自动着陆 CAT II/III 运行时，自动驾驶通常采用?",
+    "options": [
+      "单通道工作",
+      "仅偏航通道工作",
+      "仅俯仰通道工作",
+      "双通道(双AP)工作"
+    ],
+    "answer": "D",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q117",
+    "type": "single",
+    "stem": "飞行指引仪(FD)的模式选择主要依据哪个系统的输入?",
+    "options": [
+      "发动机控制系统",
+      "客舱压力控制系统",
+      "飞行管理系统(FMS)的飞行计划",
+      "起落架控制系统"
+    ],
+    "answer": "C",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q118",
+    "type": "single",
+    "stem": "自动飞行系统在\"速度保持(SPD HOLD)\"模式下，若飞机实际速度低于目标速度，系统会通过哪种方式调整?",
+    "options": [
+      "偏转副翼使飞机滚转",
+      "关闭偏航阻尼器",
+      "偏转升降舵使飞机低头(增加速度)",
+      "指令自动油门增加推力"
+    ],
+    "answer": "D",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q119",
+    "type": "single",
+    "stem": "当偏航阻尼器(YD)失效时，驾驶舱通常会出现哪种警告?",
+    "options": [
+      "红色主警告灯点亮",
+      "琥珀色\"YD INOP\"警告灯点亮",
+      "起落架未放下警告",
+      "连续音响警告"
+    ],
+    "answer": "B",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q120",
+    "type": "single",
+    "stem": "自动驾驶仪耦合 ILS 进近时，若突然失去航向台(LOC)信号，自动驾驶仪通常会?",
+    "options": [
+      "控制飞机爬升",
+      "自动断开航向保持模式，发出警告",
+      "切换到人工飞行模式",
+      "继续保持当前航向直至接地"
+    ],
+    "answer": "B",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q121",
+    "type": "single",
+    "stem": "以下哪项不属于自动驾驶脱开警告?",
+    "options": [
+      "红色脱开灯闪烁",
+      "音响警告",
+      "PFD 相关提示",
+      "发动机主警告灯亮"
+    ],
+    "answer": "D",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q122",
+    "type": "single",
+    "stem": "自动驾驶仪(AP)的核心控制部件是?",
+    "options": [
+      "舵面执行机构",
+      "高度表",
+      "姿态传感器",
+      "飞行控制计算机"
+    ],
+    "answer": "D",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q123",
+    "type": "single",
+    "stem": "现代民航飞机自动飞行深度集成设计中，集成自动驾驶、飞行指引、自动油门、偏航阻尼、配平及包络保护的计算机是?",
+    "options": [
+      "飞行管理制导和包络保护计算机 FMGEC",
+      "飞行控制计算机 FCC",
+      "数据采集组件 SDAC",
+      "飞行增稳计算机 FAC"
+    ],
+    "answer": "A",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q124",
+    "type": "single",
+    "stem": "自动驾驶接通时，自动俯仰配平由什么触发?",
+    "options": [
+      "高度偏离 500 英尺",
+      "空速达到 Vmo",
+      "升降舵偏转超过设定值并持续一定时间",
+      "航向偏离 10°"
+    ],
+    "answer": "C",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q125",
+    "type": "single",
+    "stem": "自动驾驶仪耦合 ILS 进近时，控制飞机跟踪下滑道(GS)的是哪个通道?",
+    "options": [
+      "垂直通道",
+      "速度通道",
+      "航向通道",
+      "水平通道"
+    ],
+    "answer": "A",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q126",
+    "type": "single",
+    "stem": "自动飞行\"失效安全(Fail-Safe)\"设计是指?",
+    "options": [
+      "故障时双 AP 同步",
+      "故障时自动转人工",
+      "故障时自动断开，不输出危险指令",
+      "故障时保持姿态不变"
+    ],
+    "answer": "C",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q127",
+    "type": "single",
+    "stem": "偏航阻尼器(YD)主要通过控制哪个舵面抑制荷兰滚?",
+    "options": [
+      "副翼",
+      "水平安定面",
+      "升降舵",
+      "方向舵"
+    ],
+    "answer": "D",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q128",
+    "type": "single",
+    "stem": "偏航阻尼系统(YD)的主要作用是抑制飞机的哪种运动?",
+    "options": [
+      "长周期俯仰振荡",
+      "荷兰滚(Dutch Roll)",
+      "失速",
+      "滚转过度"
+    ],
+    "answer": "B",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q129",
+    "type": "single",
+    "stem": "飞行模式告示牌(FMA)上，预位模式通常显示为?",
+    "options": [
+      "白色",
+      "红色",
+      "琥珀色",
+      "绿色"
+    ],
+    "answer": "C",
+    "explanation": "FMA上预位(armed)模式显示琥珀色，激活(active)模式显示绿色。",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q130",
+    "type": "single",
+    "stem": "偏航阻尼器(YD)是通过控制以下哪个部件来实现偏航阻尼功能的?",
+    "options": [
+      "方向舵",
+      "水平安定面",
+      "副翼",
+      "升降舵"
+    ],
+    "answer": "A",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q131",
+    "type": "single",
+    "stem": "自动油门(A/T)的 TO/GA(起飞/复飞)模式通常通过以下哪种操作触发?",
+    "options": [
+      "起落架收起",
+      "飞机达到 V1 速度",
+      "襟翼收起",
+      "飞行员将油门杆推至 TO/GA 位"
+    ],
+    "answer": "D",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q132",
+    "type": "single",
+    "stem": "在模式控制面板(MCP)上选择\"高度保持(ALT HOLD)\"模式后，自动飞行系统主要通过控制哪个部件来维持目标高度?",
+    "options": [
+      "发动机油门(控制推力)",
+      "升降舵(控制俯仰)",
+      "副翼(控制滚转)",
+      "方向舵(控制偏航)"
+    ],
+    "answer": "B",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q133",
+    "type": "single",
+    "stem": "自动驾驶衔接互锁逻辑中，必须先接通的系统是?",
+    "options": [
+      "客舱广播系统",
+      "偏航阻尼器 YD",
+      "气象雷达",
+      "应急定位发射机 ELT"
+    ],
+    "answer": "B",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q134",
+    "type": "single",
+    "stem": "B737NG 非电传飞机自动驾驶的核心计算机是?",
+    "options": [
+      "FAC",
+      "SDAC",
+      "FCC 飞行控制计算机",
+      "FMGC"
+    ],
+    "answer": "C",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q135",
+    "type": "single",
+    "stem": "飞行指引系统(FD)的主要输出形式是?",
+    "options": [
+      "监控起落架位置",
+      "向驾驶员提供姿态指引指令",
+      "直接驱动舵面控制飞机姿态",
+      "自动控制发动机推力"
+    ],
+    "answer": "B",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q136",
+    "type": "multiple",
+    "stem": "以下哪些属于自动驾驶俯仰通道工作方式?",
+    "options": [
+      "航向选择 HDG SEL",
+      "高度保持 ALT HOLD",
+      "下滑道 G/S",
+      "垂直速度 V/S"
+    ],
+    "answer": "BCD",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  },
+  {
+    "id": "q137",
+    "type": "multiple",
+    "stem": "以下哪些属于自动驾驶横滚通道工作方式?",
+    "options": [
+      "垂直导航 VNAV",
+      "水平导航 LNAV",
+      "航向保持 HDG HOLD",
+      "航向道 LOC"
+    ],
+    "answer": "BCD",
+    "explanation": "",
+    "chapter": "",
+    "score": 5
+  }
+]
