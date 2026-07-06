@@ -40,6 +40,11 @@ export function ResultPage({ results, totalScore, maxScore, questions, examTitle
     return q?.stem || ''
   }
 
+  const getQuestionOptions = (id: string) => {
+    const q = questions.find(qq => qq.id === id)
+    return q?.options || []
+  }
+
   const scoreEmoji = pct >= 90 ? '🎉' : pct >= 70 ? '👍' : pct >= 50 ? '📚' : '💪'
 
   return (
@@ -115,6 +120,25 @@ export function ResultPage({ results, totalScore, maxScore, questions, examTitle
 
                 {expandedId === r.questionId && (
                   <div className="mt-2 ml-10 text-xs space-y-1.5 bg-gray-50 rounded-xl p-3">
+                    {(() => {
+                      const opts = getQuestionOptions(r.questionId)
+                      if (opts.length > 0) {
+                        const labels = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
+                        return (
+                          <div className="flex gap-2">
+                            <span className="text-gray-400 flex-shrink-0">选项：</span>
+                            <div className="text-gray-700">
+                              {opts.map((opt, i) => (
+                                <div key={i}>
+                                  <span className="font-medium">{labels[i] || `${i + 1}`}.</span> {opt}
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )
+                      }
+                      return null
+                    })()}
                     <div className="flex gap-2">
                       <span className="text-gray-400 flex-shrink-0">你的答案：</span>
                       <span className={`font-medium ${r.isCorrect ? 'text-emerald-700' : 'text-red-700'}`}>
@@ -125,12 +149,6 @@ export function ResultPage({ results, totalScore, maxScore, questions, examTitle
                       <span className="text-gray-400 flex-shrink-0">标准答案：</span>
                       <span className="font-medium text-gray-700">{r.correctAnswer}</span>
                     </div>
-                    {r.coverage !== undefined && (
-                      <div className="flex gap-2">
-                        <span className="text-gray-400 flex-shrink-0">关键词覆盖：</span>
-                        <span className="font-medium text-gray-700">{Math.round(r.coverage * 100)}%</span>
-                      </div>
-                    )}
                   </div>
                 )}
               </div>
