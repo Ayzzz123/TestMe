@@ -55,7 +55,7 @@ function makeReviewItem(questionId: string): ReviewItem {
     efactor: 2.5,
     interval: 1,
     repetitions: 0,
-    nextReview: addDays(today(), 1),
+    nextReview: today(),
     lastReview: today(),
     lastQuality: 0,
     mastered: false,
