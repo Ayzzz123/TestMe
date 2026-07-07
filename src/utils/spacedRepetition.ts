@@ -51,17 +51,20 @@ export function sm2(quality: number, item: ReviewItem): ReviewItem {
 /** Add a wrong answer to the review queue (dedup) */
 export function enqueueReview(questionId: string): void {
   const reviews = loadReviews()
-  const existing = reviews.find(r => r.questionId === questionId)
+  const idx = reviews.findIndex(r => r.questionId === questionId)
 
-  if (existing) {
-    if (existing.mastered) {
-      existing.efactor = 2.5
-      existing.interval = 1
-      existing.repetitions = 0
-      existing.nextReview = addDays(today(), 1)
-      existing.lastReview = today()
-      existing.lastQuality = 0
-      existing.mastered = false
+  if (idx !== -1) {
+    if (reviews[idx].mastered) {
+      reviews[idx] = {
+        questionId,
+        efactor: 2.5,
+        interval: 1,
+        repetitions: 0,
+        nextReview: addDays(today(), 1),
+        lastReview: today(),
+        lastQuality: 0,
+        mastered: false,
+      }
       saveReviews(reviews)
     }
     return
@@ -82,22 +85,28 @@ export function enqueueReview(questionId: string): void {
   saveReviews(reviews)
 }
 
-/** Get review items due today (not mastered) */
-export function getDueReviewItems(): ReviewItem[] {
+/** Get a combined snapshot of due items and stats (single localStorage read) */
+export function getReviewSnapshot(): {
+  dueItems: ReviewItem[]
+  stats: { due: number; total: number; mastered: number; pct: number }
+} {
   const reviews = loadReviews()
   const t = today()
-  return reviews.filter(r => !r.mastered && r.nextReview <= t)
+  const dueItems = reviews.filter(r => !r.mastered && r.nextReview <= t)
+  const mastered = reviews.filter(r => r.mastered).length
+  const total = reviews.length
+  const pct = total > 0 ? Math.round((mastered / total) * 100) : 0
+  return { dueItems, stats: { due: dueItems.length, total, mastered, pct } }
+}
+
+/** Get review items due today (not mastered) */
+export function getDueReviewItems(): ReviewItem[] {
+  return getReviewSnapshot().dueItems
 }
 
 /** Get review statistics */
 export function getReviewStats(): { due: number; total: number; mastered: number; pct: number } {
-  const reviews = loadReviews()
-  const t = today()
-  const due = reviews.filter(r => !r.mastered && r.nextReview <= t).length
-  const mastered = reviews.filter(r => r.mastered).length
-  const total = reviews.length
-  const pct = total > 0 ? Math.round((mastered / total) * 100) : 0
-  return { due, total, mastered, pct }
+  return getReviewSnapshot().stats
 }
 
 /** Record a review result and update the item */

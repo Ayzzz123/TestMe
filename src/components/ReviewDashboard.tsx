@@ -1,17 +1,22 @@
-import { getDueReviewItems, getReviewStats } from '../utils/spacedRepetition'
+import { getReviewSnapshot } from '../utils/spacedRepetition'
 
 interface Props {
   onStartReview: () => void
 }
 
 export function ReviewDashboard({ onStartReview }: Props) {
-  const stats = getReviewStats()
-  const dueItems = getDueReviewItems()
+  const { dueItems, stats } = getReviewSnapshot()
 
-  // Count items by review round
-  const round1 = dueItems.filter(r => r.repetitions === 0).length
-  const round2Plus = dueItems.filter(r => r.repetitions >= 1 && r.repetitions < 4).length
-  const consolidating = dueItems.filter(r => r.repetitions >= 4).length
+  // Count items by review round (single pass)
+  const { round1, round2Plus, consolidating } = dueItems.reduce(
+    (acc, r) => {
+      if (r.repetitions === 0) acc.round1++
+      else if (r.repetitions < 4) acc.round2Plus++
+      else acc.consolidating++
+      return acc
+    },
+    { round1: 0, round2Plus: 0, consolidating: 0 }
+  )
 
   // No reviews at all → don't show
   if (stats.total === 0) return null

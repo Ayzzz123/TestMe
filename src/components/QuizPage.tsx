@@ -86,6 +86,9 @@ export function QuizPage({ questions, onFinish, isReviewMode = false, reviewItem
 
   const unanswered = questions.filter(q => !hasAnswer(q.id)).length
   const pct = totalCount > 0 ? Math.round((answeredCount / totalCount) * 100) : 0
+  const currentReviewItem = isReviewMode
+    ? reviewItems.find(r => r.questionId === currentQuestion.id)
+    : null
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50 flex">
@@ -122,9 +125,13 @@ export function QuizPage({ questions, onFinish, isReviewMode = false, reviewItem
                       onClick={() => setCurrentIndex(i)}
                       className={`w-7 h-7 rounded-lg text-xs font-semibold transition-all flex-shrink-0
                         ${isCurrent
-                          ? 'bg-blue-500 text-white shadow-sm shadow-blue-200 scale-110'
+                          ? isReviewMode
+                            ? 'bg-purple-500 text-white shadow-sm shadow-purple-200 scale-110'
+                            : 'bg-blue-500 text-white shadow-sm shadow-blue-200 scale-110'
                           : answered
-                            ? 'bg-emerald-50 text-emerald-600 hover:bg-emerald-100 border border-emerald-200'
+                            ? isReviewMode
+                              ? 'bg-purple-50 text-purple-600 hover:bg-purple-100 border border-purple-200'
+                              : 'bg-emerald-50 text-emerald-600 hover:bg-emerald-100 border border-emerald-200'
                             : 'bg-gray-50 text-gray-400 hover:bg-gray-100 border border-gray-200'
                         }`}
                     >
@@ -182,19 +189,16 @@ export function QuizPage({ questions, onFinish, isReviewMode = false, reviewItem
 
         <ProgressBar current={currentIndex} total={totalCount} />
 
-        {isReviewMode && (() => {
-          const ri = reviewItems.find(r => r.questionId === currentQuestion.id)
-          return ri ? (
-            <div className="flex items-center gap-2 mb-3 mt-4">
-              <span className="text-xs px-2.5 py-1 rounded-full font-semibold bg-purple-50 text-purple-600">
-                🔄 第 {ri.repetitions + 1} 轮复习
-              </span>
-              <span className="text-xs text-gray-400">
-                上次复习: {ri.lastReview}
-              </span>
-            </div>
-          ) : null
-        })()}
+        {currentReviewItem && (
+          <div className="flex items-center gap-2 mb-3 mt-4">
+            <span className="text-xs px-2.5 py-1 rounded-full font-semibold bg-purple-50 text-purple-600">
+              🔄 第 {currentReviewItem.repetitions + 1} 轮复习
+            </span>
+            <span className="text-xs text-gray-400">
+              上次复习: {currentReviewItem.lastReview}
+            </span>
+          </div>
+        )}
 
         {/* 题目卡片 */}
         <div className="flex-1 mt-5">
@@ -309,7 +313,7 @@ export function QuizPage({ questions, onFinish, isReviewMode = false, reviewItem
           <div className="absolute bottom-0 left-0 right-0 bg-white rounded-t-3xl p-6 max-h-[70vh] overflow-y-auto shadow-2xl">
             <div className="w-10 h-1 bg-gray-200 rounded-full mx-auto mb-4" />
             <div className="flex items-center justify-between mb-4">
-              <span className="font-bold text-gray-800 text-lg">答题卡</span>
+              <span className="font-bold text-gray-800 text-lg">{isReviewMode ? '复习进度' : '答题卡'}</span>
               <span className="text-sm text-gray-400">{answeredCount}/{totalCount} 已答</span>
             </div>
             <div className="flex flex-wrap gap-2">
@@ -322,9 +326,13 @@ export function QuizPage({ questions, onFinish, isReviewMode = false, reviewItem
                     onClick={() => { setCurrentIndex(i); setShowMobileSheet(false) }}
                     className={`w-10 h-10 rounded-xl text-xs font-semibold transition-all ${
                       isCurrent
-                        ? 'bg-blue-500 text-white shadow-md shadow-blue-200'
+                        ? isReviewMode
+                          ? 'bg-purple-500 text-white shadow-md shadow-purple-200'
+                          : 'bg-blue-500 text-white shadow-md shadow-blue-200'
                         : answered
-                          ? 'bg-emerald-50 text-emerald-600 border border-emerald-200'
+                          ? isReviewMode
+                            ? 'bg-purple-50 text-purple-600 border border-purple-200'
+                            : 'bg-emerald-50 text-emerald-600 border border-emerald-200'
                           : 'bg-gray-50 text-gray-400 border border-gray-200'
                     }`}
                   >

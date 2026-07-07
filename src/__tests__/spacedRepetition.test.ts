@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from 'vitest'
-import { sm2, enqueueReview, getDueReviewItems, getReviewStats, recordReview, clearAllReviews } from '../utils/spacedRepetition'
+import { sm2, enqueueReview, getDueReviewItems, getReviewStats, getReviewSnapshot, recordReview, clearAllReviews } from '../utils/spacedRepetition'
 import { loadReviews, saveReviews } from '../utils/storage'
 import type { ReviewItem } from '../types'
 
@@ -150,5 +150,24 @@ describe('queue management', () => {
     expect(stats.total).toBe(3)
     expect(stats.mastered).toBe(1)
     expect(stats.pct).toBe(33)
+  })
+
+  it('getReviewSnapshot returns both dueItems and stats in one call', () => {
+    const today = new Date().toISOString().slice(0, 10)
+    const tomorrow = new Date(Date.now() + 86400000).toISOString().slice(0, 10)
+
+    saveReviews([
+      makeItem({ questionId: 'due1', nextReview: today, mastered: false }),
+      makeItem({ questionId: 'due2', nextReview: today, mastered: false }),
+      makeItem({ questionId: 'future1', nextReview: tomorrow, mastered: false }),
+      makeItem({ questionId: 'mastered1', nextReview: today, mastered: true }),
+    ])
+
+    const { dueItems, stats } = getReviewSnapshot()
+    expect(dueItems.length).toBe(2)
+    expect(stats.due).toBe(2)
+    expect(stats.total).toBe(4)
+    expect(stats.mastered).toBe(1)
+    expect(stats.pct).toBe(25)
   })
 })
