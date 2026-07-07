@@ -47,4 +47,15 @@ export interface QuizHistory {
   results: GradingResult[]
 }
 
+export interface ReviewItem {
+  questionId: string
+  efactor: number
+  interval: number
+  repetitions: number
+  nextReview: string
+  lastReview: string
+  lastQuality: number
+  mastered: boolean
+}
+
 export type AppPage = 'upload' | 'quiz' | 'result'
