@@ -1,5 +1,5 @@
 import { useState, useCallback, useRef } from 'react'
-import type { Question, GradingResult } from '../types'
+import type { Question, GradingResult, ReviewItem } from '../types'
 import { QuestionCard } from './QuestionCard'
 import { ProgressBar } from './ProgressBar'
 import { useQuiz } from '../hooks/useQuiz'
@@ -9,9 +9,12 @@ import { clearProgress } from '../utils/storage'
 interface Props {
   questions: Question[]
   onFinish: (results: GradingResult[], totalScore: number, maxScore: number) => void
+  isReviewMode?: boolean
+  reviewItems?: ReviewItem[]
+  onReviewComplete?: (results: { questionId: string; quality: number }[]) => void
 }
 
-export function QuizPage({ questions, onFinish }: Props) {
+export function QuizPage({ questions, onFinish, isReviewMode = false, reviewItems = [], onReviewComplete }: Props) {
   const {
     userAnswers,
     currentIndex,
@@ -26,6 +29,8 @@ export function QuizPage({ questions, onFinish }: Props) {
   const [sidebarOpen, setSidebarOpen] = useState(true)
   const [showMobileSheet, setShowMobileSheet] = useState(false)
   const [showSubmitConfirm, setShowSubmitConfirm] = useState(false)
+  const [reviewQualities, setReviewQualities] = useState<Record<string, number>>({})
+  const [showQualityPicker, setShowQualityPicker] = useState(false)
   const initialized = useRef(false)
 
   if (!initialized.current && questions.length > 0) {
@@ -54,11 +59,36 @@ export function QuizPage({ questions, onFinish }: Props) {
     if (!isFirst) setCurrentIndex(currentIndex - 1)
   }, [isFirst, currentIndex])
 
+  const handleNextOrAssess = useCallback(() => {
+    if (isReviewMode) {
+      setShowQualityPicker(true)
+    } else if (isLast) {
+      const unanswered = questions.filter(q => !hasAnswer(q.id)).length
+      if (unanswered > 0) {
+        setShowSubmitConfirm(true)
+      } else {
+        handleSubmit()
+      }
+    } else {
+      setCurrentIndex(currentIndex + 1)
+    }
+  }, [isReviewMode, isLast, currentIndex, questions, hasAnswer, handleSubmit])
+
   const handleSubmit = useCallback(() => {
     const { results, totalScore, maxScore } = gradeAll(questions, userAnswers)
     clearProgress()
     onFinish(results, totalScore, maxScore)
   }, [questions, userAnswers, onFinish])
+
+  const handleReviewSubmit = useCallback(() => {
+    if (!onReviewComplete) return
+    const results = questions.map(q => ({
+      questionId: q.id,
+      quality: reviewQualities[q.id] ?? 3,
+    }))
+    clearProgress()
+    onReviewComplete(results)
+  }, [questions, reviewQualities, onReviewComplete])
 
   if (!currentQuestion) {
     return (
@@ -166,6 +196,20 @@ export function QuizPage({ questions, onFinish }: Props) {
 
         <ProgressBar current={currentIndex} total={totalCount} />
 
+        {isReviewMode && (() => {
+          const ri = reviewItems.find(r => r.questionId === currentQuestion.id)
+          return ri ? (
+            <div className="flex items-center gap-2 mb-3 mt-4">
+              <span className="text-xs px-2.5 py-1 rounded-full font-semibold bg-purple-50 text-purple-600">
+                🔄 第 {ri.repetitions + 1} 轮复习
+              </span>
+              <span className="text-xs text-gray-400">
+                上次复习: {ri.lastReview}
+              </span>
+            </div>
+          ) : null
+        })()}
+
         {/* 题目卡片 */}
         <div className="flex-1 mt-5">
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8 transition-all">
@@ -178,35 +222,98 @@ export function QuizPage({ questions, onFinish }: Props) {
         </div>
 
         {/* 底部导航 */}
-        <div className="flex items-center justify-between mt-5 pb-4">
-          <button
-            onClick={goPrev}
-            disabled={isFirst}
-            className={`px-5 py-3 rounded-xl text-sm font-medium transition-all ${
-              isFirst
-                ? 'text-gray-300 cursor-not-allowed'
-                : 'text-gray-600 hover:bg-white hover:shadow-sm border border-gray-200 bg-white'
-            }`}
-          >
-            ← 上一题
-          </button>
+        {isReviewMode ? (
+          <div className="flex flex-col gap-3 mt-5 pb-4">
+            {showQualityPicker && (
+              <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-4">
+                <p className="text-xs text-gray-400 mb-3 text-center">你对这道题的掌握程度？</p>
+                <div className="flex gap-2">
+                  {[
+                    { q: 0, label: '完全忘记', emoji: '😰' },
+                    { q: 1, label: '有印象', emoji: '🤔' },
+                    { q: 2, label: '看答案想起', emoji: '💡' },
+                    { q: 3, label: '犹豫答对', emoji: '👍' },
+                    { q: 4, label: '较流畅', emoji: '😊' },
+                    { q: 5, label: '非常轻松', emoji: '🚀' },
+                  ].map(({ q, label, emoji }) => (
+                    <button
+                      key={q}
+                      onClick={() => {
+                        const newQualities = { ...reviewQualities, [currentQuestion.id]: q }
+                        setReviewQualities(newQualities)
+                        setShowQualityPicker(false)
+                        if (isLast) {
+                          handleReviewSubmit()
+                        } else {
+                          setCurrentIndex(currentIndex + 1)
+                        }
+                      }}
+                      className="flex-1 flex flex-col items-center gap-1 py-3 px-1 rounded-xl hover:bg-purple-50 transition-colors border border-gray-100 hover:border-purple-200 text-xs"
+                    >
+                      <span className="text-lg">{emoji}</span>
+                      <span className="text-[10px] text-gray-500">{label}</span>
+                      <span className="text-[10px] font-bold text-gray-400">{q}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+            <div className="flex items-center justify-between">
+              <button
+                onClick={goPrev}
+                disabled={isFirst}
+                className={`px-5 py-3 rounded-xl text-sm font-medium transition-all ${
+                  isFirst
+                    ? 'text-gray-300 cursor-not-allowed'
+                    : 'text-gray-600 hover:bg-white hover:shadow-sm border border-gray-200 bg-white'
+                }`}
+              >
+                ← 上一题
+              </button>
+              <button
+                onClick={() => setShowQualityPicker(true)}
+                disabled={!hasAnswer(currentQuestion.id)}
+                className={`px-6 py-3 rounded-xl text-sm font-semibold transition-all ${
+                  hasAnswer(currentQuestion.id)
+                    ? 'bg-purple-500 text-white hover:bg-purple-600 shadow-sm shadow-purple-200'
+                    : 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                }`}
+              >
+                {isLast ? '评估并完成' : '评估掌握度'}
+              </button>
+            </div>
+          </div>
+        ) : (
+          <div className="flex items-center justify-between mt-5 pb-4">
+            <button
+              onClick={goPrev}
+              disabled={isFirst}
+              className={`px-5 py-3 rounded-xl text-sm font-medium transition-all ${
+                isFirst
+                  ? 'text-gray-300 cursor-not-allowed'
+                  : 'text-gray-600 hover:bg-white hover:shadow-sm border border-gray-200 bg-white'
+              }`}
+            >
+              ← 上一题
+            </button>
 
-          {isLast ? (
-            <button
-              onClick={goNext}
-              className="px-8 py-3 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white rounded-xl text-sm font-semibold hover:from-emerald-600 hover:to-emerald-700 shadow-sm shadow-emerald-200 transition-all hover:shadow-md"
-            >
-              提交答卷
-            </button>
-          ) : (
-            <button
-              onClick={goNext}
-              className="px-6 py-3 bg-blue-500 text-white rounded-xl text-sm font-semibold hover:bg-blue-600 shadow-sm shadow-blue-200 transition-all hover:shadow-md"
-            >
-              下一题 →
-            </button>
-          )}
-        </div>
+            {isLast ? (
+              <button
+                onClick={goNext}
+                className="px-8 py-3 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white rounded-xl text-sm font-semibold hover:from-emerald-600 hover:to-emerald-700 shadow-sm shadow-emerald-200 transition-all hover:shadow-md"
+              >
+                提交答卷
+              </button>
+            ) : (
+              <button
+                onClick={goNext}
+                className="px-6 py-3 bg-blue-500 text-white rounded-xl text-sm font-semibold hover:bg-blue-600 shadow-sm shadow-blue-200 transition-all hover:shadow-md"
+              >
+                下一题 →
+              </button>
+            )}
+          </div>
+        )}
       </main>
 
       {/* 移动端答题卡 */}
