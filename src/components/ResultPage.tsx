@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import type { GradingResult, Question } from '../types'
 import { saveHistory } from '../utils/storage'
+import { enqueueReview } from '../utils/spacedRepetition'
 
 interface Props {
   results: GradingResult[]
@@ -32,6 +33,9 @@ export function ResultPage({ results, totalScore, maxScore, questions, examTitle
       totalCount: results.length,
       results,
     })
+    // 错题自动加入复习队列
+    const wrongIds = results.filter(r => !r.isCorrect).map(r => r.questionId)
+    wrongIds.forEach(id => enqueueReview(id))
     setSaved(true)
   }
 
@@ -157,19 +161,29 @@ export function ResultPage({ results, totalScore, maxScore, questions, examTitle
         </div>
 
         {/* 操作 */}
-        <div className="flex gap-3 mb-8">
-          <button
-            onClick={onRestart}
-            className="flex-1 py-3.5 bg-blue-500 text-white rounded-xl font-semibold hover:bg-blue-600 shadow-sm shadow-blue-200 transition-all"
-          >
-            重新作答
-          </button>
-          <button
-            onClick={onGoHome}
-            className="py-3.5 px-6 border border-gray-200 bg-white text-gray-600 rounded-xl font-medium hover:bg-gray-50 transition-all"
-          >
-            返回首页
-          </button>
+        <div className="flex flex-col gap-3 mb-8">
+          {wrongCount > 0 && (
+            <button
+              onClick={onGoHome}
+              className="py-3.5 bg-purple-500 text-white rounded-xl font-semibold hover:bg-purple-600 shadow-sm shadow-purple-200 transition-all text-sm"
+            >
+              🧠 {wrongCount} 道错题已加入复习计划，返回首页开始复习
+            </button>
+          )}
+          <div className="flex gap-3">
+            <button
+              onClick={onRestart}
+              className="flex-1 py-3.5 bg-blue-500 text-white rounded-xl font-semibold hover:bg-blue-600 shadow-sm shadow-blue-200 transition-all"
+            >
+              重新作答
+            </button>
+            <button
+              onClick={onGoHome}
+              className="py-3.5 px-6 border border-gray-200 bg-white text-gray-600 rounded-xl font-medium hover:bg-gray-50 transition-all"
+            >
+              返回首页
+            </button>
+          </div>
         </div>
       </div>
     </div>
