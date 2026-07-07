@@ -3,9 +3,13 @@ import type { Question } from '../types'
 import avionicsExam from '../data/avionics-exam.json'
 import structureExam from '../data/aircraft-structure-exam.json'
 import { shuffle } from '../utils/shuffle'
+import { ReviewDashboard } from './ReviewDashboard'
+import { getDueReviewItems } from '../utils/spacedRepetition'
+import type { ReviewItem } from '../types'
 
 interface Props {
   onStartQuiz: (questions: Question[], title: string) => void
+  onStartReview: (questions: Question[], title: string) => void
 }
 
 interface HomeworkChapter {
@@ -34,7 +38,7 @@ const STRUCTURE_CHAPTERS: HomeworkChapter[] = [
   { index: 5, name: '铆钉规范与飞机检查方法', start: 35, end: 39 },
 ]
 
-export function HomePage({ onStartQuiz }: Props) {
+export function HomePage({ onStartQuiz, onStartReview }: Props) {
   const [avionicsOpen, setAvionicsOpen] = useState(true)
   const [structureOpen, setStructureOpen] = useState(true)
 
@@ -61,6 +65,20 @@ export function HomePage({ onStartQuiz }: Props) {
     onStartQuiz(questions, `飞机结构与部附件修理 — 模拟考试`)
   }
 
+  const handleStartReview = () => {
+    const dueItems = getDueReviewItems()
+    const reviewQuestions = dueItems
+      .map(item =>
+        allQuestions.find(q => q.id === item.questionId) ||
+        allStructureQuestions.find(q => q.id === item.questionId)
+      )
+      .filter((q): q is Question => q !== undefined)
+
+    if (reviewQuestions.length > 0) {
+      onStartReview(reviewQuestions, '间隔复习')
+    }
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50">
       <div className="max-w-4xl mx-auto p-4 md:p-8">
@@ -81,6 +99,8 @@ export function HomePage({ onStartQuiz }: Props) {
               2 门科目
             </span>
           </div>
+
+          <ReviewDashboard onStartReview={handleStartReview} />
 
           {/* 航空电子系统 Ⅰ — 可展开分组 */}
           <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
