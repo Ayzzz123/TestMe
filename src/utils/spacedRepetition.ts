@@ -48,29 +48,9 @@ export function sm2(quality: number, item: ReviewItem): ReviewItem {
   }
 }
 
-/** Add a wrong answer to the review queue (dedup) */
-export function enqueueReview(questionId: string): void {
-  const reviews = loadReviews()
-  const idx = reviews.findIndex(r => r.questionId === questionId)
-
-  if (idx !== -1) {
-    if (reviews[idx].mastered) {
-      reviews[idx] = {
-        questionId,
-        efactor: 2.5,
-        interval: 1,
-        repetitions: 0,
-        nextReview: addDays(today(), 1),
-        lastReview: today(),
-        lastQuality: 0,
-        mastered: false,
-      }
-      saveReviews(reviews)
-    }
-    return
-  }
-
-  const newItem: ReviewItem = {
+/** Create a fresh ReviewItem with default SM-2 starting values */
+function makeReviewItem(questionId: string): ReviewItem {
+  return {
     questionId,
     efactor: 2.5,
     interval: 1,
@@ -80,20 +60,40 @@ export function enqueueReview(questionId: string): void {
     lastQuality: 0,
     mastered: false,
   }
+}
 
-  reviews.push(newItem)
+/** Add a wrong answer to the review queue (dedup) */
+export function enqueueReview(questionId: string): void {
+  const reviews = loadReviews()
+  const idx = reviews.findIndex(r => r.questionId === questionId)
+
+  if (idx !== -1) {
+    if (reviews[idx].mastered) {
+      reviews[idx] = makeReviewItem(questionId)
+      saveReviews(reviews)
+    }
+    return
+  }
+
+  reviews.push(makeReviewItem(questionId))
   saveReviews(reviews)
 }
 
-/** Get a combined snapshot of due items and stats (single localStorage read) */
+/** Get a combined snapshot of due items and stats (single localStorage read, single pass) */
 export function getReviewSnapshot(): {
   dueItems: ReviewItem[]
   stats: { due: number; total: number; mastered: number; pct: number }
 } {
   const reviews = loadReviews()
   const t = today()
-  const dueItems = reviews.filter(r => !r.mastered && r.nextReview <= t)
-  const mastered = reviews.filter(r => r.mastered).length
+  const dueItems: ReviewItem[] = []
+  let mastered = 0
+
+  for (const r of reviews) {
+    if (r.mastered) { mastered++ }
+    else if (r.nextReview <= t) { dueItems.push(r) }
+  }
+
   const total = reviews.length
   const pct = total > 0 ? Math.round((mastered / total) * 100) : 0
   return { dueItems, stats: { due: dueItems.length, total, mastered, pct } }

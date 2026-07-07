@@ -72,7 +72,6 @@ export function QuizPage({ questions, onFinish, isReviewMode = false, reviewItem
       questionId: q.id,
       quality: qualities[q.id] ?? 3,
     }))
-    clearProgress()
     onReviewComplete(results)
   }, [questions, reviewQualities, onReviewComplete])
 
