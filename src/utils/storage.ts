@@ -1,4 +1,4 @@
-import type { QuizSession, QuizHistory } from '../types'
+import type { QuizSession, QuizHistory, ReviewItem } from '../types'
 
 const PROGRESS_KEY = 'quiz_current'
 const HISTORY_KEY = 'quiz_history'
@@ -39,6 +39,25 @@ export function saveHistory(entry: QuizHistory): void {
 export function loadHistory(): QuizHistory[] {
   try {
     const data = localStorage.getItem(HISTORY_KEY)
+    return data ? JSON.parse(data) : []
+  } catch {
+    return []
+  }
+}
+
+const REVIEWS_KEY = 'quiz_reviews'
+
+export function saveReviews(reviews: ReviewItem[]): void {
+  try {
+    localStorage.setItem(REVIEWS_KEY, JSON.stringify(reviews))
+  } catch {
+    // 静默失败
+  }
+}
+
+export function loadReviews(): ReviewItem[] {
+  try {
+    const data = localStorage.getItem(REVIEWS_KEY)
     return data ? JSON.parse(data) : []
   } catch {
     return []
