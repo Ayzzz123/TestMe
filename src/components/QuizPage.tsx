@@ -59,32 +59,18 @@ export function QuizPage({ questions, onFinish, isReviewMode = false, reviewItem
     if (!isFirst) setCurrentIndex(currentIndex - 1)
   }, [isFirst, currentIndex])
 
-  const handleNextOrAssess = useCallback(() => {
-    if (isReviewMode) {
-      setShowQualityPicker(true)
-    } else if (isLast) {
-      const unanswered = questions.filter(q => !hasAnswer(q.id)).length
-      if (unanswered > 0) {
-        setShowSubmitConfirm(true)
-      } else {
-        handleSubmit()
-      }
-    } else {
-      setCurrentIndex(currentIndex + 1)
-    }
-  }, [isReviewMode, isLast, currentIndex, questions, hasAnswer, handleSubmit])
-
   const handleSubmit = useCallback(() => {
     const { results, totalScore, maxScore } = gradeAll(questions, userAnswers)
     clearProgress()
     onFinish(results, totalScore, maxScore)
   }, [questions, userAnswers, onFinish])
 
-  const handleReviewSubmit = useCallback(() => {
+  const handleReviewSubmit = useCallback((finalQualities?: Record<string, number>) => {
     if (!onReviewComplete) return
+    const qualities = finalQualities || reviewQualities
     const results = questions.map(q => ({
       questionId: q.id,
-      quality: reviewQualities[q.id] ?? 3,
+      quality: qualities[q.id] ?? 3,
     }))
     clearProgress()
     onReviewComplete(results)
@@ -243,7 +229,7 @@ export function QuizPage({ questions, onFinish, isReviewMode = false, reviewItem
                         setReviewQualities(newQualities)
                         setShowQualityPicker(false)
                         if (isLast) {
-                          handleReviewSubmit()
+                          handleReviewSubmit(newQualities)
                         } else {
                           setCurrentIndex(currentIndex + 1)
                         }

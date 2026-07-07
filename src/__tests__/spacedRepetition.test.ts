@@ -73,7 +73,6 @@ describe('sm2', () => {
   })
 
   it('nextReview is set correctly based on interval', () => {
-    const today = new Date().toISOString().slice(0, 10)
     const result = sm2(5, makeItem())
     // interval=1, so nextReview = tomorrow
     const tomorrow = new Date(Date.now() + 86400000).toISOString().slice(0, 10)

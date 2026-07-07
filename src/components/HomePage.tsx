@@ -5,7 +5,6 @@ import structureExam from '../data/aircraft-structure-exam.json'
 import { shuffle } from '../utils/shuffle'
 import { ReviewDashboard } from './ReviewDashboard'
 import { getDueReviewItems } from '../utils/spacedRepetition'
-import type { ReviewItem } from '../types'
 
 interface Props {
   onStartQuiz: (questions: Question[], title: string) => void
