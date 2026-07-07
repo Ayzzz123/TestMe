@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import type { GradingResult, Question } from '../types'
 import { saveHistory } from '../utils/storage'
+import { enqueueReview } from '../utils/spacedRepetition'
 
 interface Props {
   results: GradingResult[]
@@ -12,9 +13,11 @@ interface Props {
   onGoHome: () => void
 }
 
+const LABELS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
+
 export function ResultPage({ results, totalScore, maxScore, questions, examTitle, onRestart, onGoHome }: Props) {
   const [expandedId, setExpandedId] = useState<string | null>(null)
-  const [saved, setSaved] = useState(false)
+  const savedRef = useRef(false)
 
   const displayScore = Math.round(totalScore * 100) / 100
   const displayMax = Math.round(maxScore * 100) / 100
@@ -23,7 +26,10 @@ export function ResultPage({ results, totalScore, maxScore, questions, examTitle
   const partialCount = results.filter(r => r.isPartial).length
   const wrongCount = results.length - correctCount - partialCount
 
-  if (!saved) {
+  // Side effects: save history + enqueue wrong answers (once)
+  useEffect(() => {
+    if (savedRef.current) return
+    savedRef.current = true
     saveHistory({
       date: new Date().toLocaleDateString('zh-CN'),
       totalScore: displayScore,
@@ -32,18 +38,11 @@ export function ResultPage({ results, totalScore, maxScore, questions, examTitle
       totalCount: results.length,
       results,
     })
-    setSaved(true)
-  }
+    const wrongIds = results.filter(r => !r.isCorrect).map(r => r.questionId)
+    wrongIds.forEach(id => enqueueReview(id))
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
-  const getQuestionStem = (id: string) => {
-    const q = questions.find(qq => qq.id === id)
-    return q?.stem || ''
-  }
-
-  const getQuestionOptions = (id: string) => {
-    const q = questions.find(qq => qq.id === id)
-    return q?.options || []
-  }
+  const getQuestion = (id: string) => questions.find(qq => qq.id === id)
 
   const scoreEmoji = pct >= 90 ? '🎉' : pct >= 70 ? '👍' : pct >= 50 ? '📚' : '💪'
 
@@ -91,7 +90,9 @@ export function ResultPage({ results, totalScore, maxScore, questions, examTitle
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden mb-6">
           <h3 className="px-6 py-4 font-bold text-gray-800 border-b border-gray-50">答题详情</h3>
           <div className="divide-y divide-gray-50 max-h-96 overflow-y-auto">
-            {results.map((r, i) => (
+            {results.map((r, i) => {
+              const q = getQuestion(r.questionId)
+              return (
               <div
                 key={r.questionId}
                 className="px-6 py-3 hover:bg-gray-50/50 cursor-pointer transition-colors"
@@ -109,7 +110,7 @@ export function ResultPage({ results, totalScore, maxScore, questions, examTitle
                   </span>
                   <span className="flex-1 text-sm text-gray-700 truncate">
                     <strong className="text-gray-400 mr-1">{i + 1}.</strong>
-                    {getQuestionStem(r.questionId)}
+                    {q?.stem || ''}
                   </span>
                   <span className={`text-sm font-bold flex-shrink-0 ${
                     r.isCorrect ? 'text-emerald-600' : r.isPartial ? 'text-amber-600' : 'text-red-500'
@@ -120,25 +121,18 @@ export function ResultPage({ results, totalScore, maxScore, questions, examTitle
 
                 {expandedId === r.questionId && (
                   <div className="mt-2 ml-10 text-xs space-y-1.5 bg-gray-50 rounded-xl p-3">
-                    {(() => {
-                      const opts = getQuestionOptions(r.questionId)
-                      if (opts.length > 0) {
-                        const labels = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
-                        return (
-                          <div className="flex gap-2">
-                            <span className="text-gray-400 flex-shrink-0">选项：</span>
-                            <div className="text-gray-700">
-                              {opts.map((opt, i) => (
-                                <div key={i}>
-                                  <span className="font-medium">{labels[i] || `${i + 1}`}.</span> {opt}
-                                </div>
-                              ))}
+                    {q && q.options.length > 0 && (
+                      <div className="flex gap-2">
+                        <span className="text-gray-400 flex-shrink-0">选项：</span>
+                        <div className="text-gray-700">
+                          {q.options.map((opt, j) => (
+                            <div key={j}>
+                              <span className="font-medium">{LABELS[j] || `${j + 1}`}.</span> {opt}
                             </div>
-                          </div>
-                        )
-                      }
-                      return null
-                    })()}
+                          ))}
+                        </div>
+                      </div>
+                    )}
                     <div className="flex gap-2">
                       <span className="text-gray-400 flex-shrink-0">你的答案：</span>
                       <span className={`font-medium ${r.isCorrect ? 'text-emerald-700' : 'text-red-700'}`}>
@@ -152,24 +146,34 @@ export function ResultPage({ results, totalScore, maxScore, questions, examTitle
                   </div>
                 )}
               </div>
-            ))}
+            )})}
           </div>
         </div>
 
         {/* 操作 */}
-        <div className="flex gap-3 mb-8">
-          <button
-            onClick={onRestart}
-            className="flex-1 py-3.5 bg-blue-500 text-white rounded-xl font-semibold hover:bg-blue-600 shadow-sm shadow-blue-200 transition-all"
-          >
-            重新作答
-          </button>
-          <button
-            onClick={onGoHome}
-            className="py-3.5 px-6 border border-gray-200 bg-white text-gray-600 rounded-xl font-medium hover:bg-gray-50 transition-all"
-          >
-            返回首页
-          </button>
+        <div className="flex flex-col gap-3 mb-8">
+          {wrongCount > 0 && (
+            <button
+              onClick={onGoHome}
+              className="py-3.5 bg-purple-500 text-white rounded-xl font-semibold hover:bg-purple-600 shadow-sm shadow-purple-200 transition-all text-sm"
+            >
+              🧠 {wrongCount} 道错题已加入复习计划，返回首页开始复习
+            </button>
+          )}
+          <div className="flex gap-3">
+            <button
+              onClick={onRestart}
+              className="flex-1 py-3.5 bg-blue-500 text-white rounded-xl font-semibold hover:bg-blue-600 shadow-sm shadow-blue-200 transition-all"
+            >
+              重新作答
+            </button>
+            <button
+              onClick={onGoHome}
+              className="py-3.5 px-6 border border-gray-200 bg-white text-gray-600 rounded-xl font-medium hover:bg-gray-50 transition-all"
+            >
+              返回首页
+            </button>
+          </div>
         </div>
       </div>
     </div>
