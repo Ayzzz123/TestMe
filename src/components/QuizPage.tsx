@@ -11,7 +11,7 @@ interface Props {
   onFinish: (results: GradingResult[], totalScore: number, maxScore: number) => void
   isReviewMode?: boolean
   reviewItems?: ReviewItem[]
-  onReviewComplete?: (results: { questionId: string; quality: number }[]) => void
+  onReviewComplete?: (gradingResults: GradingResult[], totalScore: number, maxScore: number, reviewQualities: { questionId: string; quality: number }[]) => void
 }
 
 export function QuizPage({ questions, onFinish, isReviewMode = false, reviewItems = [], onReviewComplete }: Props) {
@@ -65,12 +65,14 @@ export function QuizPage({ questions, onFinish, isReviewMode = false, reviewItem
 
   const handleReviewSubmit = useCallback(() => {
     if (!onReviewComplete) return
-    const results = questions.map(q => ({
+    const { results, totalScore, maxScore } = gradeAll(questions, userAnswers)
+    const qualities = questions.map(q => ({
       questionId: q.id,
       quality: 3,
     }))
-    onReviewComplete(results)
-  }, [questions, onReviewComplete])
+    clearProgress()
+    onReviewComplete(results, totalScore, maxScore, qualities)
+  }, [questions, userAnswers, onReviewComplete])
 
   if (!currentQuestion) {
     return (

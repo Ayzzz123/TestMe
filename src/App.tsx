@@ -73,11 +73,13 @@ export default function App() {
     navigateTo('quiz')
   }, [navigateTo])
 
-  const handleReviewComplete = useCallback((results: { questionId: string; quality: number }[]) => {
-    results.forEach(r => recordReview(r.questionId, r.quality))
-    setIsReviewMode(false)
+  const handleReviewComplete = useCallback((gradingResults: GradingResult[], totalScore: number, maxScore: number, reviewQualities: { questionId: string; quality: number }[]) => {
+    reviewQualities.forEach(r => recordReview(r.questionId, r.quality))
     setReviewItems([])
-    navigateTo('upload')
+    setResults(gradingResults)
+    setTotalScore(totalScore)
+    setMaxScore(maxScore)
+    navigateTo('result')
   }, [navigateTo])
 
   const handleFinish = useCallback((r: GradingResult[], ts: number, ms: number) => {
@@ -88,6 +90,8 @@ export default function App() {
   }, [navigateTo])
 
   const handleRestart = useCallback(() => {
+    setIsReviewMode(false)
+    setReviewItems([])
     navigateTo('quiz')
   }, [navigateTo])
 
@@ -120,6 +124,7 @@ export default function App() {
       maxScore={maxScore}
       questions={questions}
       examTitle={examTitle}
+      isReviewMode={isReviewMode}
       onRestart={handleRestart}
       onGoHome={handleGoHome}
     />

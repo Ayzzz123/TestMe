@@ -9,13 +9,14 @@ interface Props {
   maxScore: number
   questions: Question[]
   examTitle: string
+  isReviewMode?: boolean
   onRestart: () => void
   onGoHome: () => void
 }
 
 const LABELS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
 
-export function ResultPage({ results, totalScore, maxScore, questions, examTitle, onRestart, onGoHome }: Props) {
+export function ResultPage({ results, totalScore, maxScore, questions, examTitle, isReviewMode = false, onRestart, onGoHome }: Props) {
   const [expandedId, setExpandedId] = useState<string | null>(null)
   const savedRef = useRef(false)
 
@@ -38,8 +39,10 @@ export function ResultPage({ results, totalScore, maxScore, questions, examTitle
       totalCount: results.length,
       results,
     })
-    const wrongIds = results.filter(r => !r.isCorrect).map(r => r.questionId)
-    wrongIds.forEach(id => enqueueReview(id))
+    if (!isReviewMode) {
+      const wrongIds = results.filter(r => !r.isCorrect).map(r => r.questionId)
+      wrongIds.forEach(id => enqueueReview(id))
+    }
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   const getQuestion = (id: string) => questions.find(qq => qq.id === id)
@@ -152,7 +155,7 @@ export function ResultPage({ results, totalScore, maxScore, questions, examTitle
 
         {/* 操作 */}
         <div className="flex flex-col gap-3 mb-8">
-          {wrongCount > 0 && (
+          {!isReviewMode && wrongCount > 0 && (
             <button
               onClick={onGoHome}
               className="py-3.5 bg-purple-500 text-white rounded-xl font-semibold hover:bg-purple-600 shadow-sm shadow-purple-200 transition-all text-sm"
@@ -161,12 +164,14 @@ export function ResultPage({ results, totalScore, maxScore, questions, examTitle
             </button>
           )}
           <div className="flex gap-3">
-            <button
-              onClick={onRestart}
-              className="flex-1 py-3.5 bg-blue-500 text-white rounded-xl font-semibold hover:bg-blue-600 shadow-sm shadow-blue-200 transition-all"
-            >
-              重新作答
-            </button>
+            {!isReviewMode && (
+              <button
+                onClick={onRestart}
+                className="flex-1 py-3.5 bg-blue-500 text-white rounded-xl font-semibold hover:bg-blue-600 shadow-sm shadow-blue-200 transition-all"
+              >
+                重新作答
+              </button>
+            )}
             <button
               onClick={onGoHome}
               className="py-3.5 px-6 border border-gray-200 bg-white text-gray-600 rounded-xl font-medium hover:bg-gray-50 transition-all"
